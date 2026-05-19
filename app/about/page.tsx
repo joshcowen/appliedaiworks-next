@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="font-headline text-4xl font-bold text-brand-orange">
-                <StatCounter target={80} />
+                <StatCounter target={80} suffix="+" />
               </div>
               <div className="text-sm text-on-surface-variant mt-1">AI projects built</div>
             </div>

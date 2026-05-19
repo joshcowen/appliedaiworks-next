@@ -64,7 +64,7 @@ export default function WestMichiganPage() {
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={80} className="text-2xl font-headline font-bold text-on-surface" />
+                  <StatCounter target={80} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Projects Built</div>
               </div>
@@ -191,7 +191,7 @@ export default function WestMichiganPage() {
                 </div>
                 <div className="bg-surface-container-highest rounded-xl p-3 text-center">
                   <div className="font-headline text-2xl font-bold text-on-surface">
-                    <StatCounter target={80} />
+                    <StatCounter target={80} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Projects built</div>
                 </div>

@@ -213,7 +213,7 @@ export default function ConstructionPage() {
                 </div>
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-on-surface">
-                    <StatCounter target={80} />
+                    <StatCounter target={80} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">AI projects built</div>
                 </div>

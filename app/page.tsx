@@ -87,7 +87,7 @@ export default function HomePage() {
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={80} />
+                  <StatCounter target={80} suffix="+" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Projects Built</div>
               </div>
@@ -269,7 +269,7 @@ export default function HomePage() {
                     <div className="text-xs text-on-surface-variant mt-1">At agency rates</div>
                   </div>
                   <div className="bg-surface-container-highest rounded-2xl p-5">
-                    <div className="font-headline text-3xl font-bold text-on-surface mb-1"><StatCounter target={80} /></div>
+                    <div className="font-headline text-3xl font-bold text-on-surface mb-1"><StatCounter target={80} suffix="+" /></div>
                     <div className="text-xs text-brand-orange uppercase tracking-widest font-bold">Projects Built</div>
                     <div className="text-xs text-on-surface-variant mt-1">Apps, tools, systems</div>
                   </div>
