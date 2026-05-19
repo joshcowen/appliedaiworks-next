@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import StatCounter from "@/components/StatCounter";
 
 export const metadata: Metadata = {
@@ -53,18 +54,35 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />
-        <div className="relative max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-surface-container-low border border-outline-variant/20 rounded-full px-4 py-2 text-xs font-medium text-on-surface-variant mb-8">
-            <span className="material-symbols-outlined text-brand-orange" style={{ fontSize: "14px" }}>person</span>
-            About
+        <div className="relative max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: text */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-surface-container-low border border-outline-variant/20 rounded-full px-4 py-2 text-xs font-medium text-on-surface-variant mb-8">
+                <span className="material-symbols-outlined text-brand-orange" style={{ fontSize: "14px" }}>person</span>
+                About
+              </div>
+              <h1 className="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
+                I&apos;m not a tech person.<br />
+                <span className="text-kinetic">I just figured it out.</span>
+              </h1>
+              <p className="text-on-surface-variant text-lg leading-relaxed">
+                No CS degree. No developer background. Just a business operator who got obsessed with AI tools and built a lot of things to see what actually worked.
+              </p>
+            </div>
+            {/* Right: photo */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden border border-outline-variant/20 neural-glow">
+                <Image
+                  src="/josh-cowen.jpg"
+                  alt="Josh Cowen — Applied AI Works"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+            </div>
           </div>
-          <h1 className="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
-            I&apos;m not a tech person.<br />
-            <span className="text-kinetic">I just figured it out.</span>
-          </h1>
-          <p className="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
-            No CS degree. No developer background. Just a business operator who got obsessed with AI tools and built a lot of things to see what actually worked.
-          </p>
         </div>
       </section>
 
