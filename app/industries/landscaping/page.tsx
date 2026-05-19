@@ -195,13 +195,13 @@ export default function LandscapingPage() {
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-brand-orange">
-                    <StatCounter target={2700} suffix="+" />
+                    <StatCounter target={3500} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work logged</div>
                 </div>
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-on-surface">
-                    <StatCounter target={66} />
+                    <StatCounter target={80} />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">AI projects built</div>
                 </div>
@@ -219,7 +219,7 @@ export default function LandscapingPage() {
                 I run a service business. I know what seasonal pressure feels like, what a proposal backlog costs, and what it means to lose a maintenance client because the renewal email never went out.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                That context is what makes the advice different. 2,700+ hours of hands-on AI work, applied to real business problems.
+                That context is what makes the advice different. 3,500+ hours of hands-on AI work, applied to real business problems.
               </p>
               <Link href="/about" className="text-brand-orange text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
                 Learn more about Josh

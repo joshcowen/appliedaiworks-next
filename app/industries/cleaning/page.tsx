@@ -196,7 +196,7 @@ export default function CleaningPage() {
                 I run a service business. I know what it costs when communication is inconsistent, when onboarding takes three times longer than it should, and when scheduling chaos eats the day.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                2,700+ hours of hands-on AI work applied to real business problems — not a vendor playbook.
+                3,500+ hours of hands-on AI work applied to real business problems — not a vendor playbook.
               </p>
               <Link href="/about" className="text-brand-orange text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
                 Learn more about Josh
@@ -207,18 +207,18 @@ export default function CleaningPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-brand-orange">
-                    <StatCounter target={2700} suffix="+" />
+                    <StatCounter target={3500} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work logged</div>
                 </div>
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-on-surface">
-                    <StatCounter target={66} />
+                    <StatCounter target={80} />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">AI projects built</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={400} suffix="K+" /></div>
+                  <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={600} suffix="K+" /></div>
                   <div className="text-xs text-on-surface-variant mt-1">In recoverable time found</div>
                 </div>
                 <div className="text-center">

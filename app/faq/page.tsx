@@ -50,7 +50,7 @@ const auditFaqs: FaqItem[] = [
   {
     question: "How is this different from a generic AI consulting engagement?",
     answer:
-      "Most AI consultants come from a software or enterprise background and deliver frameworks and decks. I&apos;m a business operator who has personally used AI to build 66 projects and save over 2,700 hours of work. I look at your operation the same way I look at mine — practical, specific, no buzzwords. The roadmap you get is designed to be acted on, not filed away.",
+      "Most AI consultants come from a software or enterprise background and deliver frameworks and decks. I&apos;m a business operator who has personally used AI to build 80+ projects and save over 3,500+ hours of work. I look at your operation the same way I look at mine — practical, specific, no buzzwords. The roadmap you get is designed to be acted on, not filed away.",
   },
   {
     question: "Is there a guarantee?",

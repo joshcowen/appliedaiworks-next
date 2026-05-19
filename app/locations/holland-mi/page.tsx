@@ -54,17 +54,17 @@ export default function HollandMiPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={2700} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
+                  <StatCounter target={3500} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Hours Saved</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
-                <div className="text-2xl font-headline font-bold text-on-surface">$400K+</div>
+                <div className="text-2xl font-headline font-bold text-on-surface">$600K+</div>
                 <div className="text-xs text-primary uppercase tracking-widest font-bold mt-1">Work Value</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={66} className="text-2xl font-headline font-bold text-on-surface" />
+                  <StatCounter target={80} className="text-2xl font-headline font-bold text-on-surface" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Projects Built</div>
               </div>
@@ -155,13 +155,13 @@ export default function HollandMiPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-surface-container-highest rounded-xl p-3 text-center">
                   <div className="font-headline text-2xl font-bold text-brand-orange">
-                    <StatCounter target={2700} suffix="+" />
+                    <StatCounter target={3500} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours logged</div>
                 </div>
                 <div className="bg-surface-container-highest rounded-xl p-3 text-center">
                   <div className="font-headline text-2xl font-bold text-on-surface">
-                    <StatCounter target={66} />
+                    <StatCounter target={80} />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Projects built</div>
                 </div>
@@ -170,7 +170,7 @@ export default function HollandMiPage() {
             <div>
               <h2 className="font-headline text-2xl font-bold text-on-surface mb-4">Local. Practical. No technical background required.</h2>
               <p className="text-on-surface-variant leading-relaxed mb-4">
-                I&apos;m a Holland business owner who built 66 AI tools and logged 2,700+ hours figuring out what works. Not a consultant from Grand Rapids who added &quot;AI&quot; to their website. I live in the community I serve.
+                I&apos;m a Holland business owner who built 80+ AI tools and logged 3,500+ hours figuring out what works. Not a consultant from Grand Rapids who added &quot;AI&quot; to their website. I live in the community I serve.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
                 The advice is grounded in real work with real businesses — no jargon, no vendor bias, no long-term contracts.

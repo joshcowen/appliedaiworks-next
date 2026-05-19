@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 };
 
 const featuredPost = {
-  title: "How One Business Operator Saved 2,700 Hours Using AI — And What That Means for Your Operation",
+  title: "How One Business Operator Saved 3,500+ Hours Using AI — And What That Means for Your Operation",
   category: "Case Study",
   date: "March 2026",
   readTime: "12 min read",
   stats: [
-    { value: "2,700+", label: "Hours saved" },
-    { value: "$400K+", label: "Value recovered" },
-    { value: "66", label: "Projects built" },
+    { value: "3,500+", label: "Hours saved" },
+    { value: "$600K+", label: "Value recovered" },
+    { value: "80+", label: "Projects built" },
   ],
-  excerpt: "The full story of what 2,700+ hours of AI work actually looks like — what worked, what didn't, and what it means for a service business with real constraints.",
+  excerpt: "The full story of what 3,500+ hours of AI work actually looks like — what worked, what didn't, and what it means for a service business with real constraints.",
 };
 
 const posts = [

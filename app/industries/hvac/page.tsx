@@ -200,13 +200,13 @@ export default function HvacPage() {
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-brand-orange">
-                    <StatCounter target={2700} suffix="+" />
+                    <StatCounter target={3500} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work logged</div>
                 </div>
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-on-surface">
-                    <StatCounter target={66} />
+                    <StatCounter target={80} />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">AI projects built</div>
                 </div>
@@ -225,7 +225,7 @@ export default function HvacPage() {
                 I&apos;m not an enterprise software consultant who learned about trades from a case study. I&apos;m a business operator who got obsessed with AI and figured out what actually works for companies that run on service calls, dispatches, and tight margins.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                Every recommendation I make comes from real hands-on work — 2,700+ hours of it — not a vendor playbook.
+                Every recommendation I make comes from real hands-on work — 3,500+ hours of it — not a vendor playbook.
               </p>
               <Link
                 href="/about"

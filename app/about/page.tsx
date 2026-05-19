@@ -6,7 +6,7 @@ import StatCounter from "@/components/StatCounter";
 export const metadata: Metadata = {
   title: "About Josh Cowen — Applied AI Works",
   description:
-    "Josh Cowen built 66 AI tools, logged 2,700+ hours of hands-on AI work, and helped businesses find $400K+ in recoverable time — without a single developer.",
+    "Josh Cowen built 80+ AI tools, logged 3,500+ hours of hands-on AI work, and helped businesses find $600K+ in recoverable time — without a single developer.",
 };
 
 export default function AboutPage() {
@@ -42,7 +42,7 @@ export default function AboutPage() {
       tagColor: "text-brand-orange",
     },
     {
-      name: "66 Total Projects",
+      name: "80+ Projects",
       desc: "From small automations to full-stack apps. Every one started with a real problem worth solving.",
       tag: "And Counting",
       tagColor: "text-green-400",
@@ -92,18 +92,18 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="font-headline text-4xl font-bold text-brand-orange">
-                <StatCounter target={66} />
+                <StatCounter target={80} />
               </div>
               <div className="text-sm text-on-surface-variant mt-1">AI projects built</div>
             </div>
             <div>
               <div className="font-headline text-4xl font-bold text-on-surface">
-                <StatCounter target={2700} suffix="+" />
+                <StatCounter target={3500} suffix="+" />
               </div>
               <div className="text-sm text-on-surface-variant mt-1">Hours of AI work logged</div>
             </div>
             <div>
-              <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={400} suffix="K+" /></div>
+              <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={600} suffix="K+" /></div>
               <div className="text-sm text-on-surface-variant mt-1">In recoverable time found</div>
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 Not everything worked. A lot of early experiments were a waste of time. But the ones that did work saved real hours — hours I used to spend on writing, research, building reports, formatting proposals.
               </p>
               <p className="text-on-surface-variant leading-relaxed">
-                So I kept going. Built more. Documented what worked and what didn&apos;t. Hit 2,700 hours of hands-on AI work. Built 66 projects. Started helping other businesses do the same thing.
+                So I kept going. Built more. Documented what worked and what didn&apos;t. Hit 3,500+ hours of hands-on AI work. Built 80+ projects. Started helping other businesses do the same thing.
               </p>
               <p className="text-on-surface-variant leading-relaxed">
                 That&apos;s what Applied AI Works is. Not a firm. Not a platform. Just someone who went deep on this and can show you what&apos;s actually worth doing.
@@ -180,7 +180,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">
-              What 66 projects looks like
+              What 80+ projects looks like
             </h2>
             <p className="text-on-surface-variant max-w-xl mx-auto">
               Not side experiments. Real tools that solved real problems, for my agency and for clients.

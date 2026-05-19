@@ -77,17 +77,17 @@ export default function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={2700} suffix="+" />
+                  <StatCounter target={3500} suffix="+" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Hours Saved</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
-                <div className="text-2xl font-headline font-bold text-on-surface">$400K+</div>
+                <div className="text-2xl font-headline font-bold text-on-surface">$600K+</div>
                 <div className="text-xs text-primary uppercase tracking-widest font-bold mt-1">Work Value</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={66} />
+                  <StatCounter target={80} />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Projects Built</div>
               </div>
@@ -148,7 +148,7 @@ export default function HomePage() {
               <div className="px-6 pb-6">
                 <div className="bg-surface-container-highest rounded-2xl p-4 border border-outline-variant/10">
                   <p className="text-xs text-on-surface-variant leading-relaxed italic">
-                    &ldquo;I&apos;m not a tech consultant. I&apos;m a business operator who saved 2,700 hours using AI &mdash; and I&apos;ll show you exactly where to start in yours.&rdquo;
+                    &ldquo;I&apos;m not a tech consultant. I&apos;m a business operator who saved 3,500+ hours using AI &mdash; and I&apos;ll show you exactly where to start in yours.&rdquo;
                   </p>
                   <p className="text-xs text-brand-orange font-bold mt-2">&mdash; Josh Cowen</p>
                 </div>
@@ -259,17 +259,17 @@ export default function HomePage() {
                 </div>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div className="bg-surface-container-highest rounded-2xl p-5">
-                    <div className="font-headline text-3xl font-bold text-on-surface mb-1"><StatCounter target={2700} suffix="+" /></div>
+                    <div className="font-headline text-3xl font-bold text-on-surface mb-1"><StatCounter target={3500} suffix="+" /></div>
                     <div className="text-xs text-brand-orange uppercase tracking-widest font-bold">Hours Saved</div>
                     <div className="text-xs text-on-surface-variant mt-1">With AI assistance</div>
                   </div>
                   <div className="bg-surface-container-highest rounded-2xl p-5">
-                    <div className="font-headline text-3xl font-bold text-on-surface mb-1">$400K+</div>
+                    <div className="font-headline text-3xl font-bold text-on-surface mb-1">$600K+</div>
                     <div className="text-xs text-primary uppercase tracking-widest font-bold">Work Value</div>
                     <div className="text-xs text-on-surface-variant mt-1">At agency rates</div>
                   </div>
                   <div className="bg-surface-container-highest rounded-2xl p-5">
-                    <div className="font-headline text-3xl font-bold text-on-surface mb-1"><StatCounter target={66} /></div>
+                    <div className="font-headline text-3xl font-bold text-on-surface mb-1"><StatCounter target={80} /></div>
                     <div className="text-xs text-brand-orange uppercase tracking-widest font-bold">Projects Built</div>
                     <div className="text-xs text-on-surface-variant mt-1">Apps, tools, systems</div>
                   </div>
@@ -295,7 +295,7 @@ export default function HomePage() {
               <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface mb-8 leading-tight">I built $400,000 worth of&nbsp;work.<br />By myself. With&nbsp;AI.</h2>
               <div className="space-y-4 text-on-surface-variant leading-relaxed text-base mb-8">
                 <p>I&apos;m not a developer. I don&apos;t have a computer science degree. I&apos;m a business operator who got obsessed with AI tools and figured out how to use them to do the work of a much larger team.</p>
-                <p>Over the last two years, I&apos;ve completed 66 projects &mdash; websites, automations, content systems, internal tools &mdash; work that would have taken a full team to deliver. I did it alone, using AI as leverage.</p>
+                <p>Over the last two years, I&apos;ve completed 80+ projects &mdash; websites, automations, content systems, internal tools &mdash; work that would have taken a full team to deliver. I did it alone, using AI as leverage.</p>
                 <p>Now I help service business owners in West Michigan do the same thing. Not by making you into a tech person &mdash; by showing you exactly where AI fits into your operation and handing you the tools to use it.</p>
               </div>
               <Link href="/about" className="inline-flex items-center gap-2 text-brand-orange font-bold hover:gap-3 transition-all text-sm uppercase tracking-widest">

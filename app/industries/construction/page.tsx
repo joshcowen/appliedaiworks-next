@@ -193,7 +193,7 @@ export default function ConstructionPage() {
                 I understand service businesses. Not just AI.
               </h2>
               <p className="text-on-surface-variant leading-relaxed mb-4">
-                I&apos;m not an enterprise consultant parachuted in from a software background. I&apos;m a business operator who built 66 AI projects and logged 2,700+ hours figuring out what works for companies running tight schedules and real crews.
+                I&apos;m not an enterprise consultant parachuted in from a software background. I&apos;m a business operator who built 80+ AI projects and logged 3,500+ hours figuring out what works for companies running tight schedules and real crews.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
                 The advice is grounded in what actually moves the needle — not what looks good in a presentation.
@@ -207,18 +207,18 @@ export default function ConstructionPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-brand-orange">
-                    <StatCounter target={2700} suffix="+" />
+                    <StatCounter target={3500} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work logged</div>
                 </div>
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-on-surface">
-                    <StatCounter target={66} />
+                    <StatCounter target={80} />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">AI projects built</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={400} suffix="K+" /></div>
+                  <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={600} suffix="K+" /></div>
                   <div className="text-xs text-on-surface-variant mt-1">In recoverable time found</div>
                 </div>
                 <div className="text-center">
