@@ -35,7 +35,7 @@ export default function Nav() {
       id="nav"
       className={`fixed top-0 w-full z-50 transition-all duration-300 font-headline ${
         scrolled
-          ? "bg-[#060e20]/98 border-b border-outline-variant/40"
+          ? "bg-[#060e20] border-b border-outline-variant/40"
           : "bg-[#060e20]/60 backdrop-blur-xl"
       }`}
     >
