@@ -27,6 +27,7 @@ const posts = [
     date: "April 2026",
     readTime: "8 min read",
     excerpt: "A straight answer to the question most business owners are actually thinking: is the audit going to pay for itself? Here's how to do the math for your operation.",
+    href: "/blog/is-an-ai-audit-worth-it",
   },
   {
     title: "5 Things HVAC Companies Can Automate This Week",
@@ -34,6 +35,7 @@ const posts = [
     date: "April 2026",
     readTime: "6 min read",
     excerpt: "Not theory. Five specific automations that HVAC companies are using right now to get hours back every week — without replacing a single employee.",
+    href: "/blog/5-hvac-automations",
   },
   {
     title: "Why Your First AI Tool Probably Shouldn't Be ChatGPT",
@@ -41,6 +43,7 @@ const posts = [
     date: "March 2026",
     readTime: "5 min read",
     excerpt: "Most people start with ChatGPT, get generic outputs, and conclude AI isn't for them. Here's a better starting point for service business owners.",
+    href: "/blog/first-ai-tool-not-chatgpt",
   },
 ];
 
@@ -99,21 +102,21 @@ export default function BlogPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post, i) => (
-              <div key={i} className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6 flex flex-col">
+              <Link key={i} href={post.href} className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6 flex flex-col hover:border-brand-orange/30 transition-colors group">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">{post.category}</span>
                   <span className="text-xs text-on-surface-variant">{post.date}</span>
                 </div>
-                <h3 className="font-headline font-bold text-on-surface text-lg mb-3 leading-tight flex-1">{post.title}</h3>
+                <h3 className="font-headline font-bold text-on-surface text-lg mb-3 leading-tight flex-1 group-hover:text-brand-orange transition-colors">{post.title}</h3>
                 <p className="text-on-surface-variant text-sm leading-relaxed mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-on-surface-variant">{post.readTime}</span>
-                  <span className="text-xs text-on-surface-variant cursor-not-allowed opacity-60 flex items-center gap-1">
-                    Coming soon
-                    <span className="material-symbols-outlined" style={{ fontSize: "12px" }}>schedule</span>
+                  <span className="text-xs text-brand-orange flex items-center gap-1">
+                    Read
+                    <span className="material-symbols-outlined" style={{ fontSize: "12px" }}>arrow_forward</span>
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="mt-12 text-center">

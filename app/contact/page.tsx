@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact — Applied AI Works",
@@ -95,35 +96,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Email Contact Card */}
-            <div className="bg-surface-container-low border border-brand-orange/20 rounded-3xl p-8 neural-glow flex flex-col">
-              <div className="mb-6">
-                <div className="w-12 h-12 kinetic-gradient rounded-xl flex items-center justify-center mb-4">
-                  <span className="material-symbols-outlined text-white" style={{ fontVariationSettings: "'FILL' 1" }}>mail</span>
-                </div>
-                <h2 className="font-headline text-xl font-bold text-on-surface mb-2">Email to get started</h2>
-                <p className="text-on-surface-variant text-sm leading-relaxed">
-                  Send a note to book your free discovery call. Tell me a bit about your business and what you&apos;re dealing with.
-                </p>
-              </div>
-              <a
-                href="mailto:josh@appliedaiworks.com"
-                className="kinetic-gradient text-white font-bold px-6 py-4 rounded-xl text-sm flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform"
-              >
-                <span className="material-symbols-outlined text-sm">mail</span>
-                josh@appliedaiworks.com
-              </a>
-              <div className="mt-6 pt-6 border-t border-outline-variant/10">
-                <div className="flex items-center gap-2 text-sm text-on-surface-variant">
-                  <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>schedule</span>
-                  Usually responds within one business day
-                </div>
-              </div>
-              <div className="mt-4 bg-surface-container-highest rounded-xl p-4">
-                <div className="text-xs text-on-surface-variant font-medium mb-1">Calendar booking</div>
-                <div className="text-sm text-on-surface-variant">Coming soon. For now, email is the fastest way to get time on the calendar.</div>
-              </div>
-            </div>
+            {/* Contact Form */}
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -197,10 +171,10 @@ export default function ContactPage() {
       <section className="py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">
-            Email to book your free discovery call.
+            Prefer to just send an email?
           </h2>
           <p className="text-on-surface-variant mb-8 text-lg">
-            No pitch. Just 30 minutes to figure out if this is worth your time.
+            That works too.
           </p>
           <a
             href="mailto:josh@appliedaiworks.com"

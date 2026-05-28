@@ -34,7 +34,7 @@ export default function StatCounter({ target, suffix = "", duration = 1800, clas
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.1 }
     );
 
     observer.observe(el);
