@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,8 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
 
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="font-headline text-lg font-bold text-on-surface block mb-3">
-              Applied <span className="text-kinetic">AI</span> Works
+            <Link href="/" className="block mb-3">
+              <Image
+                src="/logo-reversed.png"
+                alt="Applied AI Works"
+                width={180}
+                height={36}
+                className="h-7 w-auto"
+              />
             </Link>
             <p className="text-sm text-on-surface-variant leading-relaxed mb-4">
               AI consulting for service businesses and skilled trades in West Michigan. Practical tools. Real results. No technical background required.
