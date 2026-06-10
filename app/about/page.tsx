@@ -4,7 +4,7 @@ import Image from "next/image";
 import StatCounter from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "About Josh Cowen — Applied AI Works",
+  title: "About Josh Cowen | AI Consultant — Applied AI Works",
   description:
     "Josh Cowen built 80+ AI tools, logged 3,500+ hours of hands-on AI work, and helped businesses find $600K+ in recoverable time — without a single developer.",
 };

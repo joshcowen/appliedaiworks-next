@@ -4,9 +4,9 @@ import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import StatCounter from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "AI for Cleaning Companies — Applied AI Works",
+  title: "AI Consulting for Cleaning Services — Applied AI Works",
   description:
-    "AI consulting for cleaning companies in West Michigan. Better onboarding, fewer scheduling headaches, more consistent communication. Start with a $1,500 AI Audit.",
+    "AI consulting for cleaning companies in West Michigan. Better onboarding, fewer scheduling headaches, more consistent communication. $1,500 AI Audit.",
 };
 
 const faqItems: FaqItem[] = [

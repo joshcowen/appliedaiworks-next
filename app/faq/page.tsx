@@ -2,8 +2,33 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I need to be tech-savvy to work with you?", "acceptedAnswer": { "@type": "Answer", "text": "Not at all. My clients are business owners and operators — not tech people. I explain everything in plain language, show you exactly how to use each tool, and make sure you're comfortable before we move on." } },
+    { "@type": "Question", "name": "How do I know if AI is actually relevant to my business?", "acceptedAnswer": { "@type": "Answer", "text": "If your business has repetitive tasks — answering the same customer questions, writing estimates, chasing invoices, scheduling follow-ups — AI can almost certainly help. The free discovery call is designed specifically to answer this question for your situation." } },
+    { "@type": "Question", "name": "What happens on the free discovery call?", "acceptedAnswer": { "@type": "Answer", "text": "It's a 30-minute conversation about your operation. I ask about what tasks eat your time, where work gets stuck, how your team communicates, and what you've already tried. At the end, I'll tell you honestly whether the AI Audit makes sense for your situation." } },
+    { "@type": "Question", "name": "Do you work with businesses outside West Michigan?", "acceptedAnswer": { "@type": "Answer", "text": "My focus is on West Michigan service businesses, but all work is done remotely so geography isn't a barrier. If you're a service business owner outside the area who found this and it resonates, reach out." } },
+    { "@type": "Question", "name": "What exactly is included in the $1,500 AI Audit?", "acceptedAnswer": { "@type": "Answer", "text": "The audit includes a deep-dive interview about your workflows and operations, a written analysis of where AI can save you the most time and money, specific tool recommendations, a prioritized roadmap with estimated time savings for each item, and a 30-minute debrief call." } },
+    { "@type": "Question", "name": "How long does the audit take to complete?", "acceptedAnswer": { "@type": "Answer", "text": "From our kickoff call to final delivery, typically 5-7 business days. The kickoff interview runs about 60-90 minutes. You'll have your full audit document and roadmap within a week of our first call." } },
+    { "@type": "Question", "name": "What if I just want the audit and don't need implementation?", "acceptedAnswer": { "@type": "Answer", "text": "That's completely fine. The audit stands alone as a valuable deliverable. A lot of clients use the roadmap to implement things themselves, hand it off to a team member, or use it to evaluate whether they want to go further." } },
+    { "@type": "Question", "name": "How is this different from a generic AI consulting engagement?", "acceptedAnswer": { "@type": "Answer", "text": "Most AI consultants come from a software or enterprise background and deliver frameworks and decks. I'm a business operator who has personally used AI to build 80+ projects and save over 3,500 hours of work. The roadmap you get is designed to be acted on, not filed away." } },
+    { "@type": "Question", "name": "Is there a guarantee?", "acceptedAnswer": { "@type": "Answer", "text": "I don't offer a formal refund guarantee because I can't guarantee how quickly you'll act on the roadmap. What I can guarantee is that you'll receive a thorough, specific, and honest deliverable." } },
+    { "@type": "Question", "name": "Why is the audit $1,500 and not cheaper?", "acceptedAnswer": { "@type": "Answer", "text": "Because it takes real time and requires genuine expertise. The interview, research, written analysis, and debrief call amount to 8-12 hours of focused work. If the roadmap identifies just 5 hours per week in savings, you're looking at payback in 6-10 weeks." } },
+    { "@type": "Question", "name": "What does implementation work cost?", "acceptedAnswer": { "@type": "Answer", "text": "Implementation is priced at $300/hr or as a project rate scoped upfront. For ongoing support and strategy, the Monthly Advisor retainer is $1,500/month and includes two strategy sessions plus async support." } },
+    { "@type": "Question", "name": "Can you train my whole team, not just me?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Team training is available and priced per session. We work through real tasks from your business — not generic demos." } },
+    { "@type": "Question", "name": "Do you take on ongoing clients or just one-time engagements?", "acceptedAnswer": { "@type": "Answer", "text": "Both. Most clients start with the audit and then decide what they want to do next. Some implement the roadmap themselves. Some hire me for project-based implementation. A smaller group wants ongoing monthly support as an AI advisor." } },
+    { "@type": "Question", "name": "How much of my time does this require?", "acceptedAnswer": { "@type": "Answer", "text": "For the audit: about 90 minutes for the kickoff interview, plus a 30-minute debrief at the end. Everything in between is my work." } },
+    { "@type": "Question", "name": "Will I become dependent on you to keep things running?", "acceptedAnswer": { "@type": "Answer", "text": "No — and I build everything specifically to avoid that. You'll understand how the tools work, how to modify them, and how to train your team on them. My goal is that after we're done, you can maintain and expand what we built without coming back to me." } },
+    { "@type": "Question", "name": "What tools do you recommend most often for service businesses?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your operation. For most service businesses, the biggest wins typically come from AI-assisted communication, scheduling and dispatch optimization, and automating admin work. The audit is where I figure out the right fit for your specific stack." } },
+    { "@type": "Question", "name": "What if I tried AI before and it didn't work?", "acceptedAnswer": { "@type": "Answer", "text": "That's the most common situation I walk into. Most people tried ChatGPT, got generic outputs, and concluded AI isn't for them. The audit specifically looks at what you tried, why it didn't stick, and where the real leverage is in your operation." } },
+    { "@type": "Question", "name": "Will AI replace my employees?", "acceptedAnswer": { "@type": "Answer", "text": "No — and that's not what I help with. AI replaces tasks, not tradespeople. Your HVAC tech, plumber, or crew lead can't be replaced by software. What can be replaced is the two hours of admin work they do before and after each job." } }
+  ]
+};
+
 export const metadata: Metadata = {
-  title: "FAQ — Applied AI Works | AI Consulting for Service Businesses",
+  title: "FAQ — AI Consulting for Service Businesses | Applied AI Works",
   description:
     "Common questions about AI consulting, the AI Audit, pricing, and working with Applied AI Works. Plain answers for service business owners in West Michigan.",
 };
@@ -113,6 +138,10 @@ const workingTogetherFaqs: FaqItem[] = [
 export default function FaqPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-brand-orange/[0.08] blur-[180px] rounded-full pointer-events-none" />

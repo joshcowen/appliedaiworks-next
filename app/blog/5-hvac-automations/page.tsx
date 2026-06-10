@@ -7,6 +7,17 @@ export const metadata: Metadata = {
     "Five specific, real automations for HVAC companies. What they are, what tool does it, how long setup takes, and how many hours you get back.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5 Things HVAC Companies Can Automate This Week",
+  "description": "Five specific, real automations for HVAC companies. What they are, what tool does it, how long setup takes, and how many hours you get back.",
+  "author": { "@type": "Person", "name": "Josh Cowen", "url": "https://www.appliedaiworks.com/about" },
+  "publisher": { "@type": "Organization", "name": "Applied AI Works", "url": "https://www.appliedaiworks.com" },
+  "datePublished": "2026-04-01",
+  "url": "https://www.appliedaiworks.com/blog/5-hvac-automations"
+};
+
 export default function BlogPost2() {
   const automations = [
     {
@@ -63,6 +74,10 @@ export default function BlogPost2() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <section className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />
         <div className="relative max-w-3xl mx-auto px-6">

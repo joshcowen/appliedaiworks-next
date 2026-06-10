@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog — Applied AI Works | Practical AI for Service Businesses",
+  title: "Blog — Practical AI for Service Businesses | Applied AI Works",
   description:
     "No hype. No buzzwords. Real tools, real examples, and honest takes on what AI can and can't do for service businesses and skilled trades in West Michigan.",
 };

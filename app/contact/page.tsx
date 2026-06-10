@@ -4,7 +4,7 @@ import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Applied AI Works",
+  title: "Book a Free Discovery Call — Applied AI Works",
   description:
     "Get in touch with Applied AI Works. Email josh@appliedaiworks.com to book a free 30-minute discovery call for AI consulting in West Michigan.",
 };

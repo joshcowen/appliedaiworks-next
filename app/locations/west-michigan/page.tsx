@@ -3,7 +3,7 @@ import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "AI Consulting for West Michigan Service Businesses — Applied AI Works",
+  title: "AI Consulting for West Michigan Service Businesses",
   description:
     "Applied AI Works helps West Michigan service businesses and skilled trades find where AI saves the most time and money. Serving Holland, Zeeland, Grand Rapids, Muskegon, and Kalamazoo.",
 };

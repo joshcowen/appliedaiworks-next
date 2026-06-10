@@ -3,7 +3,7 @@ import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing — Applied AI Works",
+  title: "AI Consulting Services & Pricing — Applied AI Works",
   description:
     "Transparent AI consulting pricing for service businesses. AI Audit starting at $1,500. Training and implementation at $300/hr. No long-term contracts.",
 };

@@ -7,9 +7,24 @@ export const metadata: Metadata = {
     "Most service business owners try ChatGPT, get vague outputs, and quit. Here are three better starting points for trades and service businesses.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your First AI Tool Probably Shouldn't Be ChatGPT",
+  "description": "Most service business owners try ChatGPT, get vague outputs, and quit. Here are three better starting points for trades and service businesses.",
+  "author": { "@type": "Person", "name": "Josh Cowen", "url": "https://www.appliedaiworks.com/about" },
+  "publisher": { "@type": "Organization", "name": "Applied AI Works", "url": "https://www.appliedaiworks.com" },
+  "datePublished": "2026-03-01",
+  "url": "https://www.appliedaiworks.com/blog/first-ai-tool-not-chatgpt"
+};
+
 export default function BlogPost3() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <section className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />
         <div className="relative max-w-3xl mx-auto px-6">

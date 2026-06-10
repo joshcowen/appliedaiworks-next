@@ -7,9 +7,24 @@ export const metadata: Metadata = {
     "An honest breakdown of whether an AI Audit pays for itself. The math, who it makes sense for, and who should skip it.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The $1,500 Question: Is an AI Audit Worth It?",
+  "description": "An honest breakdown of whether an AI Audit pays for itself. The math, who it makes sense for, and who should skip it.",
+  "author": { "@type": "Person", "name": "Josh Cowen", "url": "https://www.appliedaiworks.com/about" },
+  "publisher": { "@type": "Organization", "name": "Applied AI Works", "url": "https://www.appliedaiworks.com" },
+  "datePublished": "2026-04-01",
+  "url": "https://www.appliedaiworks.com/blog/is-an-ai-audit-worth-it"
+};
+
 export default function BlogPost1() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <section className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />
         <div className="relative max-w-3xl mx-auto px-6">

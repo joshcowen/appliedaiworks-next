@@ -3,7 +3,7 @@ import Link from "next/link";
 import RoiCalculator from "@/components/RoiCalculator";
 
 export const metadata: Metadata = {
-  title: "AI ROI Calculator — Applied AI Works",
+  title: "AI ROI Calculator for Service Businesses — Applied AI Works",
   description:
     "See what AI is worth to your service business. Calculate hours saved per week, annual dollar value, and weeks to ROI on an AI Audit.",
 };

@@ -4,7 +4,7 @@ import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import StatCounter from "@/components/StatCounter";
 
 export const metadata: Metadata = {
-  title: "AI for Plumbing Companies — Applied AI Works",
+  title: "AI Consulting for Plumbing Companies — Applied AI Works",
   description:
     "AI consulting for plumbing companies in West Michigan. Faster follow-ups, better estimates, less admin. Start with a $1,500 AI Audit.",
 };

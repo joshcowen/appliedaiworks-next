@@ -19,9 +19,38 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Applied AI Works | AI Consulting for Service Businesses in West Michigan",
+  title: "Applied AI Works | AI Consulting — West Michigan",
   description:
-    "Applied AI Works helps HVAC, plumbing, landscaping, and trades businesses in West Michigan find where AI saves time and money — starting with a $1,500 AI Audit.",
+    "Applied AI Works helps HVAC, plumbing, landscaping, and trades businesses in West Michigan find where AI saves time and money. Start with a $1,500 AI Audit.",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Applied AI Works LLC",
+  url: "https://www.appliedaiworks.com",
+  email: "josh@appliedaiworks.com",
+  description:
+    "AI consulting for service businesses and skilled trades in West Michigan. AI audits, training, and implementation. Based in Zeeland, MI.",
+  founder: {
+    "@type": "Person",
+    name: "Josh Cowen",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1800 92nd Ave",
+    addressLocality: "Zeeland",
+    addressRegion: "MI",
+    postalCode: "49464",
+    addressCountry: "US",
+  },
+  areaServed: [
+    { "@type": "City", name: "Holland", containedInPlace: { "@type": "State", name: "Michigan" } },
+    { "@type": "City", name: "Zeeland", containedInPlace: { "@type": "State", name: "Michigan" } },
+    { "@type": "City", name: "Grand Rapids", containedInPlace: { "@type": "State", name: "Michigan" } },
+  ],
+  priceRange: "$$",
+  knowsAbout: ["Artificial Intelligence", "Business Automation", "AI Consulting", "Workflow Automation"],
 };
 
 export default function RootLayout({
@@ -35,6 +64,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body
