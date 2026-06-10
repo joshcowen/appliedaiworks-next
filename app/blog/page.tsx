@@ -61,7 +61,7 @@ export default function BlogPage() {
             Blog
           </div>
           <h1 className="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
-            Practical AI for service businesses.
+            No hype. Real tools. Real hours saved.
           </h1>
           <p className="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
             No hype. No buzzwords. Real tools, real examples, and honest takes on what AI can and can&apos;t do for the trades and service businesses that keep West Michigan running.
