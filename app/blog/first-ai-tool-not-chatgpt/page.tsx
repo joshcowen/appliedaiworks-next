@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Why Your First AI Tool Probably Shouldn't Be ChatGPT — Applied AI Works",
+  title: "Why Your First AI Tool Probably Shouldn't Be ChatGPT",
   description:
     "Most service business owners try ChatGPT, get vague outputs, and quit. Here are three better starting points for trades and service businesses.",
 };
@@ -21,6 +22,7 @@ const articleSchema = {
 export default function BlogPost3() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Blog", url: "https://www.appliedaiworks.com/blog" }, { name: "Why Not ChatGPT First", url: "https://www.appliedaiworks.com/blog/first-ai-tool-not-chatgpt" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

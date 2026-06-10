@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import ContactForm from "@/components/ContactForm";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Book a Free Discovery Call — Applied AI Works",
+  title: "Book Your Free AI Discovery Call — Applied AI Works",
   description:
     "Get in touch with Applied AI Works. Email josh@appliedaiworks.com to book a free 30-minute discovery call for AI consulting in West Michigan.",
 };
@@ -30,6 +31,7 @@ const faqItems: FaqItem[] = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Contact", url: "https://www.appliedaiworks.com/contact" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />

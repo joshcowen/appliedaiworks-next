@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "AI Consulting Services & Pricing — Applied AI Works",
@@ -34,6 +35,7 @@ const faqItems: FaqItem[] = [
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Services", url: "https://www.appliedaiworks.com/services" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />

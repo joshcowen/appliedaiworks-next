@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "The $1,500 Question: Is an AI Audit Worth It? — Applied AI Works",
+  title: "Is a $1,500 AI Audit Worth It? An Honest Breakdown",
   description:
-    "An honest breakdown of whether an AI Audit pays for itself. The math, who it makes sense for, and who should skip it.",
+    "An honest breakdown of whether a $1,500 AI Audit pays for itself. The math, who it makes sense for, and who should skip it.",
 };
 
 const articleSchema = {
@@ -21,6 +22,7 @@ const articleSchema = {
 export default function BlogPost1() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Blog", url: "https://www.appliedaiworks.com/blog" }, { name: "Is an AI Audit Worth It?", url: "https://www.appliedaiworks.com/blog/is-an-ai-audit-worth-it" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

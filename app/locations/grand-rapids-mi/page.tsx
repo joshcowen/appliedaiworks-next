@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "AI Consulting in Grand Rapids, MI — Applied AI Works",
   description:
-    "AI consulting for Grand Rapids service businesses. Not the enterprise firm. The AI consultant who actually works with trades and service businesses. $1,500 AI Audit.",
+    "AI consulting for Grand Rapids service businesses and skilled trades. Not the enterprise firm. The practical AI consultant. $1,500 AI Audit.",
 };
 
 const industries = [
@@ -20,6 +21,7 @@ const industries = [
 export default function GrandRapidsMiPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Locations", url: "https://www.appliedaiworks.com/locations/grand-rapids-mi" }, { name: "Grand Rapids, MI", url: "https://www.appliedaiworks.com/locations/grand-rapids-mi" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />

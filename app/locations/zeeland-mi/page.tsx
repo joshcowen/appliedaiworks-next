@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "AI Consulting in Zeeland, MI — Applied AI Works",
+  title: "AI Consulting for Zeeland, MI — Service Businesses",
   description:
     "AI consulting for Zeeland, MI service businesses. Find where AI saves your operation the most time and money before competitors do. $1,500 AI Audit.",
 };
@@ -20,6 +21,7 @@ const industries = [
 export default function ZeelandMiPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Locations", url: "https://www.appliedaiworks.com/locations/zeeland-mi" }, { name: "Zeeland, MI", url: "https://www.appliedaiworks.com/locations/zeeland-mi" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />

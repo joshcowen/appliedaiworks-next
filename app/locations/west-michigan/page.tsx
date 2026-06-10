@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "AI Consulting for West Michigan Service Businesses",
   description:
-    "Applied AI Works helps West Michigan service businesses and skilled trades find where AI saves the most time and money. Serving Holland, Zeeland, Grand Rapids, Muskegon, and Kalamazoo.",
+    "Applied AI Works helps West Michigan trades and service businesses find where AI saves the most time and money. Serving Holland, Zeeland, Grand Rapids, and beyond.",
 };
 
 const industries = [
@@ -20,6 +21,7 @@ const industries = [
 export default function WestMichiganPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Locations", url: "https://www.appliedaiworks.com/locations/west-michigan" }, { name: "West Michigan", url: "https://www.appliedaiworks.com/locations/west-michigan" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />

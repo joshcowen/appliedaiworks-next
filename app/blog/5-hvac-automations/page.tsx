@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "5 Things HVAC Companies Can Automate This Week — Applied AI Works",
+  title: "5 Automations Every HVAC Company Should Run This Week",
   description:
     "Five specific, real automations for HVAC companies. What they are, what tool does it, how long setup takes, and how many hours you get back.",
 };
@@ -74,6 +75,7 @@ export default function BlogPost2() {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Blog", url: "https://www.appliedaiworks.com/blog" }, { name: "5 HVAC Automations", url: "https://www.appliedaiworks.com/blog/5-hvac-automations" }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

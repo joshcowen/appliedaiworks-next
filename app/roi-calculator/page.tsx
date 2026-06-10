@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RoiCalculator from "@/components/RoiCalculator";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "AI ROI Calculator for Service Businesses — Applied AI Works",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function RoiCalculatorPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "ROI Calculator", url: "https://www.appliedaiworks.com/roi-calculator" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />

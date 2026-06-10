@@ -19,14 +19,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Applied AI Works | AI Consulting — West Michigan",
+  title: "Applied AI Works — AI Consulting for West Michigan",
   description:
     "Applied AI Works helps HVAC, plumbing, landscaping, and trades businesses in West Michigan find where AI saves time and money. Start with a $1,500 AI Audit.",
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   name: "Applied AI Works LLC",
   url: "https://www.appliedaiworks.com",
   email: "josh@appliedaiworks.com",
@@ -44,6 +44,7 @@ const organizationSchema = {
     postalCode: "49464",
     addressCountry: "US",
   },
+  openingHours: "Mo-Fr 08:00-18:00",
   areaServed: [
     { "@type": "City", name: "Holland", containedInPlace: { "@type": "State", name: "Michigan" } },
     { "@type": "City", name: "Zeeland", containedInPlace: { "@type": "State", name: "Michigan" } },

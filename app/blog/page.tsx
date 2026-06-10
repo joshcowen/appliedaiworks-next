@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Blog — Practical AI for Service Businesses | Applied AI Works",
+  title: "Practical AI Blog for Trades and Service Businesses",
   description:
     "No hype. No buzzwords. Real tools, real examples, and honest takes on what AI can and can't do for service businesses and skilled trades in West Michigan.",
 };
@@ -50,6 +51,7 @@ const posts = [
 export default function BlogPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Blog", url: "https://www.appliedaiworks.com/blog" }]} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-orange/5 via-transparent to-transparent" />
