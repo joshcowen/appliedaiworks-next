@@ -1,0 +1,54 @@
+# Applied AI Works
+
+> AI consulting for service businesses and skilled trades in West Michigan. Practical AI audits, training, and implementation — not enterprise frameworks.
+
+## About
+
+Applied AI Works is owned and operated by Josh Cowen, based in Zeeland, MI. The focus is on service businesses and skilled trades with 5-50 employees: HVAC, plumbing, landscaping, construction, cleaning, and auto repair companies across West Michigan.
+
+Josh has personally used AI to build 80+ projects and save 3,500+ hours of work. The advice comes from a business operator, not a software consultant.
+
+## Services
+
+- **AI Audit ($1,500 flat)**: A 60-90 minute kickoff interview, written workflow analysis, specific tool recommendations with reasoning, a prioritized implementation roadmap with estimated time savings, and a 30-minute debrief call. Delivered in 5-7 business days.
+- **Implementation ($300/hr or project rate)**: Building and deploying the automations identified in the audit. Scoped upfront.
+- **Monthly Advisor Retainer ($1,500/month)**: Two strategy sessions per month plus async support for ongoing AI strategy.
+- **Team Training (per session)**: Hands-on training using real tasks from your business. Not generic demos.
+
+## Who This Is For
+
+Service businesses with repetitive admin tasks: scheduling follow-ups, estimate writing, invoice chasing, customer communications, service call documentation. If your team spends 8-15 hours per week on tasks like these, an audit will almost certainly find automation opportunities that pay back the fee in 6-10 weeks.
+
+## Contact
+
+- Email: josh@appliedaiworks.com
+- Website: https://www.appliedaiworks.com
+- Location: Zeeland, MI (serving all of West Michigan)
+- Discovery call: Free 30-minute call, no commitment
+
+## Pages
+
+- Homepage: https://www.appliedaiworks.com
+- AI Audit: https://www.appliedaiworks.com/ai-audit
+- Services: https://www.appliedaiworks.com/services
+- About: https://www.appliedaiworks.com/about
+- Contact: https://www.appliedaiworks.com/contact
+- FAQ: https://www.appliedaiworks.com/faq
+- ROI Calculator: https://www.appliedaiworks.com/roi-calculator
+- Blog: https://www.appliedaiworks.com/blog
+
+## Industries Served
+
+- HVAC: https://www.appliedaiworks.com/industries/hvac
+- Plumbing: https://www.appliedaiworks.com/industries/plumbing
+- Landscaping: https://www.appliedaiworks.com/industries/landscaping
+- Construction: https://www.appliedaiworks.com/industries/construction
+- Cleaning Services: https://www.appliedaiworks.com/industries/cleaning
+- Auto Repair: https://www.appliedaiworks.com/industries/auto-repair
+
+## Service Areas
+
+- Holland, MI: https://www.appliedaiworks.com/locations/holland-mi
+- Zeeland, MI: https://www.appliedaiworks.com/locations/zeeland-mi
+- Grand Rapids, MI: https://www.appliedaiworks.com/locations/grand-rapids-mi
+- West Michigan: https://www.appliedaiworks.com/locations/west-michigan

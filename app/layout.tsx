@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Applied AI Works — AI Consulting for West Michigan",
+  title: "Applied AI Works — AI Consulting for Service Businesses",
   description:
     "Applied AI Works helps HVAC, plumbing, landscaping, and trades businesses in West Michigan find where AI saves time and money. Start with a $1,500 AI Audit.",
 };

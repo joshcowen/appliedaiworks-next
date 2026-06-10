@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "AI Consulting for West Michigan Service Businesses",
   description:
-    "Applied AI Works helps West Michigan trades and service businesses find where AI saves the most time and money. Serving Holland, Zeeland, Grand Rapids, and beyond.",
+    "Applied AI Works helps West Michigan service businesses find where AI saves time and money. Holland, Zeeland, Grand Rapids.",
 };
 
 const industries = [
