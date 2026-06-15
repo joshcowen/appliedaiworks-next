@@ -69,7 +69,7 @@ export default function IndustriesPage() {
             AI built for the trades, not tech companies
           </h1>
           <p className="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
-            AI tools designed for enterprise software don't map to a 12-person HVAC company or a landscaping crew. We work with service businesses specifically, so the advice is practical from the start.
+            AI tools designed for enterprise software don&apos;t map to a 12-person HVAC company or a landscaping crew. We work with service businesses specifically, so the advice is practical from the start.
           </p>
         </div>
       </section>
