@@ -91,10 +91,10 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
-            <span className="inline-flex items-center gap-2 text-on-surface-variant text-sm cursor-not-allowed opacity-60">
-              Coming soon
-              <span className="material-symbols-outlined text-sm">schedule</span>
-            </span>
+            <Link href="/blog/how-one-operator-saved-3500-hours" className="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold hover:gap-3 transition-all">
+              Read the case study
+              <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
           </div>
         </div>
       </section>
