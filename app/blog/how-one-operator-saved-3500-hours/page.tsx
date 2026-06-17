@@ -69,6 +69,17 @@ export default function CaseStudyPost() {
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6 leading-tight">
             How One Business Operator Saved 3,500+ Hours Using AI, and What That Means for Your Operation
           </h1>
+          <div className="rounded-2xl overflow-hidden mb-8">
+            <Image
+              src="/josh-cowen-featured.jpg"
+              alt="Josh Cowen in his workshop"
+              width={3024}
+              height={1701}
+              className="w-full object-cover"
+              priority
+            />
+          </div>
+
           <div className="grid grid-cols-3 gap-4 mb-8">
             {[
               { value: "3,500+", label: "Hours saved" },
