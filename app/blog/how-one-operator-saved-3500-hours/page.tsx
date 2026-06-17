@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -246,8 +247,28 @@ export default function CaseStudyPost() {
             </div>
           </div>
 
+          {/* Author card */}
+          <div className="border-t border-outline-variant/10 pt-8 flex items-center gap-5">
+            <div className="flex-shrink-0">
+              <Image
+                src="/josh-cowen.jpg"
+                alt="Josh Cowen, founder of Applied AI Works"
+                width={72}
+                height={72}
+                className="rounded-full object-cover object-top"
+              />
+            </div>
+            <div>
+              <div className="font-headline font-bold text-on-surface text-sm">Josh Cowen</div>
+              <div className="text-xs text-brand-orange font-medium mb-1">Founder, Applied AI Works</div>
+              <p className="text-on-surface-variant text-xs leading-relaxed">
+                AI consultant for service businesses in West Michigan. Formerly ran a marketing consultancy for a decade. Built 80+ AI tools and systems as a solo operator before starting Applied AI Works.
+              </p>
+            </div>
+          </div>
+
           {/* Author note */}
-          <div className="border-t border-outline-variant/10 pt-8">
+          <div className="pt-2">
             <p className="text-on-surface-variant text-sm leading-relaxed italic">
               Case study compiled March 2026. Projects span Claude Code, ChatGPT, Replit, and Manus. Time estimates compare AI-assisted hours against equivalent manual or contracted work at standard market rates.
             </p>
