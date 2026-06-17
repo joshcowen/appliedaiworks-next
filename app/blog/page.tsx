@@ -112,13 +112,13 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post, i) => (
               <Link key={i} href={post.href} className="bg-surface-container-low border border-outline-variant/10 rounded-2xl overflow-hidden flex flex-col hover:border-brand-orange/30 transition-colors group">
-                <div className="overflow-hidden">
+                <div className="overflow-hidden aspect-video">
                   <Image
                     src={post.image}
                     alt={post.imageAlt}
                     width={600}
                     height={338}
-                    className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
