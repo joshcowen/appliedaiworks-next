@@ -122,6 +122,34 @@ export default function BlogPost2() {
             </p>
           </div>
 
+          <div className="mt-8 bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6">
+            <h3 className="font-headline font-bold text-on-surface text-sm mb-4">Tools referenced in this post</h3>
+            <div className="grid grid-cols-2 gap-2">
+              {[
+                { name: "Make.com", href: "https://www.make.com", desc: "Automation workflows" },
+                { name: "Zapier", href: "https://zapier.com", desc: "No-code automation" },
+                { name: "Otter.ai", href: "https://otter.ai", desc: "Voice transcription" },
+                { name: "Housecall Pro", href: "https://www.housecallpro.com", desc: "Field service software" },
+                { name: "ServiceTitan", href: "https://www.servicetitan.com", desc: "Field service software" },
+                { name: "SimpleTexting", href: "https://simpletexting.com", desc: "SMS automation" },
+              ].map((tool) => (
+                <a
+                  key={tool.name}
+                  href={tool.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-on-surface-variant hover:text-brand-orange transition-colors"
+                >
+                  <span className="material-symbols-outlined text-brand-orange/60" style={{ fontSize: "14px" }}>open_in_new</span>
+                  <span>
+                    <span className="font-medium text-on-surface">{tool.name}</span>
+                    <span className="text-xs ml-1 text-on-surface-variant/70">— {tool.desc}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-12 pt-10 border-t border-outline-variant/10">
             <div className="bg-surface-container-low border border-brand-orange/20 rounded-2xl p-6 neural-glow">
               <h3 className="font-headline font-bold text-on-surface mb-2">Not sure where to start with your operation?</h3>
