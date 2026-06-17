@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "How One Business Operator Saved 3,500+ Hours Using AI — And What That Means for Your Operation",
+  headline: "How One Business Operator Saved 3,500+ Hours Using AI, and What That Means for Your Operation",
   description:
     "The real story of 80+ AI projects, 3,500+ hours of work recovered, and $600K+ in equivalent value. What worked, what didn't, and what it means for a service business.",
   author: {
@@ -66,7 +66,7 @@ export default function CaseStudyPost() {
             <span className="text-xs text-on-surface-variant">12 min read</span>
           </div>
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6 leading-tight">
-            How One Business Operator Saved 3,500+ Hours Using AI — And What That Means for Your Operation
+            How One Business Operator Saved 3,500+ Hours Using AI, and What That Means for Your Operation
           </h1>
           <div className="grid grid-cols-3 gap-4 mb-8">
             {[
@@ -86,7 +86,7 @@ export default function CaseStudyPost() {
             ))}
           </div>
           <p className="text-on-surface-variant text-lg leading-relaxed">
-            Three years ago I started keeping track. Every project I built using AI, every system I shipped, every tool I put into production, I logged it. When I added it up earlier this year, the number was 3,500+ hours of work I didn&apos;t have to do myself, worth somewhere north of $600,000 at market rates. I&apos;m going to tell you what that actually looks like, because a number that size usually means someone is being creative with the math.
+            Three years ago I started keeping track. Every project I built using AI, every system I shipped, every tool I put into production, I logged it. When I added it up earlier this year, the number was 3,500+ hours of work I didn&apos;t have to do myself, worth somewhere north of $600,000 at market rates. I&apos;m going to tell you what that actually looks like, because a number that size usually means someone is being creative with the math. But I&apos;m not.
           </p>
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function CaseStudyPost() {
             </h2>
             <div className="space-y-4 text-on-surface-variant leading-relaxed">
               <p>
-                I run two small businesses: a marketing consultancy and a hiring messaging company, both in West Michigan. Neither has a development team. For most of the time I&apos;m describing, I was the only person doing the work.
+                I was running a marketing consultancy in West Michigan with a small team of contractors. The contractors were handling client work. I was the only one in the operation using AI to go faster.
               </p>
               <p>
                 That context matters. This isn&apos;t a story about a company that added AI to an existing tech team. It&apos;s about one person who figured out, project by project, that the gap between having an idea and having a working thing had basically closed.
@@ -178,7 +178,7 @@ export default function CaseStudyPost() {
                 Most of what&apos;s in this list wouldn&apos;t exist without AI. I wouldn&apos;t have hired a developer to build a calculation widget for client presentations. The cost wouldn&apos;t have been worth it. With AI, the threshold for &ldquo;worth building&rdquo; dropped to almost nothing. So I built more things, and some of those things turned out to be genuinely useful.
               </p>
               <p>
-                The bottleneck was never skill or ideas. It was the cost of execution. AI removed that cost, and when the cost of execution goes to near zero, a lot of things become worth doing.
+                For years the constraint was the cost of execution. Hiring a developer, finding a workaround, or dropping the idea. AI removed that constraint, and once it goes near zero, a lot of things that were never worth building before suddenly are.
               </p>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function CaseStudyPost() {
                 My work is heavy on knowledge work: writing, building, research, systems design. A plumbing company has a different mix, but the math works the same way.
               </p>
               <p>
-                Where service businesses lose the most hours per week is not glamorous. It&apos;s follow-up emails that don&apos;t go out because the person who sent the estimate is also driving to jobs. It&apos;s after-call documentation that gets reconstructed from memory at 5 PM. It&apos;s appointment reminders nobody sends because the schedule lives in someone&apos;s head.
+                Where service businesses lose the most hours per week is not glamorous. The follow-up email on an estimate that went out two weeks ago and hasn&apos;t been touched since, because the person who sent it was also running jobs. After-call documentation reconstructed from memory at 5 PM, usually incomplete. Appointment reminders that live in someone&apos;s head until the customer calls to reschedule.
               </p>
               <p>
                 An HVAC company with four technicians is probably losing 10 to 20 hours per week across those three categories. That&apos;s a workflow gap, and it&apos;s the kind of gap AI handles well.
@@ -213,9 +213,6 @@ export default function CaseStudyPost() {
               What didn&apos;t work
             </h2>
             <div className="space-y-4 text-on-surface-variant leading-relaxed">
-              <p>
-                This is the part that gets skipped in case studies like this one.
-              </p>
               <p>
                 I built tools that nobody used, including me. A client dashboard that turned out to be more work to populate than it saved. A wireframe builder I convinced myself I&apos;d use weekly before realizing I don&apos;t make wireframes that often. A couple of content tools that were outpaced by the next version of the AI they were built around.
               </p>
