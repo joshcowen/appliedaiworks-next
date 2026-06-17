@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -43,6 +44,16 @@ export default function BlogPost1() {
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6 leading-tight">
             The $1,500 Question: Is an AI Audit Worth It?
           </h1>
+          <div className="rounded-2xl overflow-hidden mb-8">
+            <Image
+              src="https://res.cloudinary.com/dh0xneapb/image/upload/v1774539234/rightpeopleco/library/AdobeStock_143079956.jpg"
+              alt="Team reviewing business expenses and budget analysis"
+              width={1200}
+              height={675}
+              className="w-full object-cover"
+              priority
+            />
+          </div>
           <p className="text-on-surface-variant text-lg leading-relaxed">
             I get asked this pretty regularly, and I want to give you an honest answer instead of a sales pitch. Sometimes an AI Audit is absolutely worth $1,500. Sometimes it isn&apos;t. Here&apos;s the math so you can figure out which camp you&apos;re in before you spend anything.
           </p>

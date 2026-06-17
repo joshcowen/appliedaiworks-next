@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -96,6 +97,16 @@ export default function BlogPost2() {
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6 leading-tight">
             5 Things HVAC Companies Can Automate This Week
           </h1>
+          <div className="rounded-2xl overflow-hidden mb-8">
+            <Image
+              src="https://res.cloudinary.com/dh0xneapb/image/upload/v1774539179/rightpeopleco/library/AdobeStock_129108292.jpg"
+              alt="HVAC technician servicing a water heater"
+              width={1200}
+              height={675}
+              className="w-full object-cover"
+              priority
+            />
+          </div>
           <p className="text-on-surface-variant text-lg leading-relaxed">
             Not AI in the abstract sense. Not &ldquo;train a model on your data.&rdquo; Actual automations that take specific repetitive tasks off your plate. Here are five that work well for HVAC companies, with what tool does it, how long setup takes, and what you actually get back.
           </p>

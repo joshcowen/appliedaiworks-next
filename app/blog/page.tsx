@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -29,6 +30,8 @@ const posts = [
     readTime: "8 min read",
     excerpt: "A straight answer to the question most business owners are actually thinking: is the audit going to pay for itself? Here's how to do the math for your operation.",
     href: "/blog/is-an-ai-audit-worth-it",
+    image: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539234/rightpeopleco/library/AdobeStock_143079956.jpg",
+    imageAlt: "Team reviewing business expenses and budget analysis",
   },
   {
     title: "5 Things HVAC Companies Can Automate This Week",
@@ -37,6 +40,8 @@ const posts = [
     readTime: "6 min read",
     excerpt: "Not theory. Five specific automations that HVAC companies are using right now to get hours back every week — without replacing a single employee.",
     href: "/blog/5-hvac-automations",
+    image: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539179/rightpeopleco/library/AdobeStock_129108292.jpg",
+    imageAlt: "HVAC technician servicing a water heater",
   },
   {
     title: "Why Your First AI Tool Probably Shouldn't Be ChatGPT",
@@ -45,6 +50,8 @@ const posts = [
     readTime: "5 min read",
     excerpt: "Most people start with ChatGPT, get generic outputs, and conclude AI isn't for them. Here's a better starting point for service business owners.",
     href: "/blog/first-ai-tool-not-chatgpt",
+    image: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539208/rightpeopleco/library/AdobeStock_135379542.jpg",
+    imageAlt: "Freelancer working on a laptop",
   },
 ];
 
@@ -104,19 +111,30 @@ export default function BlogPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {posts.map((post, i) => (
-              <Link key={i} href={post.href} className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6 flex flex-col hover:border-brand-orange/30 transition-colors group">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">{post.category}</span>
-                  <span className="text-xs text-on-surface-variant">{post.date}</span>
+              <Link key={i} href={post.href} className="bg-surface-container-low border border-outline-variant/10 rounded-2xl overflow-hidden flex flex-col hover:border-brand-orange/30 transition-colors group">
+                <div className="overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    width={600}
+                    height={338}
+                    className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="font-headline font-bold text-on-surface text-lg mb-3 leading-tight flex-1 group-hover:text-brand-orange transition-colors">{post.title}</h3>
-                <p className="text-on-surface-variant text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-on-surface-variant">{post.readTime}</span>
-                  <span className="text-xs text-brand-orange flex items-center gap-1">
-                    Read
-                    <span className="material-symbols-outlined" style={{ fontSize: "12px" }}>arrow_forward</span>
-                  </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">{post.category}</span>
+                    <span className="text-xs text-on-surface-variant">{post.date}</span>
+                  </div>
+                  <h3 className="font-headline font-bold text-on-surface text-lg mb-3 leading-tight flex-1 group-hover:text-brand-orange transition-colors">{post.title}</h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-on-surface-variant">{post.readTime}</span>
+                    <span className="text-xs text-brand-orange flex items-center gap-1">
+                      Read
+                      <span className="material-symbols-outlined" style={{ fontSize: "12px" }}>arrow_forward</span>
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}

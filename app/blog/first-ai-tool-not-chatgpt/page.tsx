@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -43,6 +44,16 @@ export default function BlogPost3() {
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6 leading-tight">
             Why Your First AI Tool Probably Shouldn&apos;t Be ChatGPT
           </h1>
+          <div className="rounded-2xl overflow-hidden mb-8">
+            <Image
+              src="https://res.cloudinary.com/dh0xneapb/image/upload/v1774539208/rightpeopleco/library/AdobeStock_135379542.jpg"
+              alt="Freelancer working on a laptop"
+              width={1200}
+              height={675}
+              className="w-full object-cover"
+              priority
+            />
+          </div>
           <p className="text-on-surface-variant text-lg leading-relaxed">
             Most service business owners try ChatGPT at some point. They type in something like &ldquo;write me an email to a customer about their estimate,&rdquo; get something vague and generic, and conclude that AI isn&apos;t really useful for their business. I hear this a lot. And I get it.
           </p>
