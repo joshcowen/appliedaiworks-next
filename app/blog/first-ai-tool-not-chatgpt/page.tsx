@@ -44,13 +44,13 @@ export default function BlogPost3() {
           <h1 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-6 leading-tight">
             Why Your First AI Tool Probably Shouldn&apos;t Be ChatGPT
           </h1>
-          <div className="rounded-2xl overflow-hidden mb-8">
+          <div className="rounded-2xl overflow-hidden mb-8 aspect-video">
             <Image
               src="https://res.cloudinary.com/dh0xneapb/image/upload/v1774539208/rightpeopleco/library/AdobeStock_135379542.jpg"
               alt="Freelancer working on a laptop"
               width={1200}
               height={675}
-              className="w-full object-cover"
+              className="w-full h-full object-cover"
               priority
             />
           </div>
