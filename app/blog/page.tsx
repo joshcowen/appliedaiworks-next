@@ -121,17 +121,6 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
-          <div className="mt-12 text-center">
-            <div className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6 max-w-md mx-auto">
-              <span className="material-symbols-outlined text-brand-orange mb-3 block" style={{ fontVariationSettings: "'FILL' 1" }}>edit_note</span>
-              <h3 className="font-headline font-bold text-on-surface mb-2">More posts coming soon</h3>
-              <p className="text-on-surface-variant text-sm leading-relaxed">Practical guides, industry breakdowns, and honest takes on AI for service businesses. Check back regularly or reach out to get notified.</p>
-              <a href="mailto:josh@appliedaiworks.com" className="mt-4 inline-flex items-center gap-1 text-sm text-brand-orange font-semibold hover:gap-2 transition-all">
-                Get notified by email
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
