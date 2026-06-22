@@ -31,7 +31,6 @@ const organizationSchema = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: "Applied AI Works LLC",
   url: "https://www.appliedaiworks.com",
-  email: "josh@appliedaiworks.com",
   description:
     "AI consulting for service businesses and skilled trades in West Michigan. AI audits, training, and implementation. Based in Zeeland, MI.",
   founder: {

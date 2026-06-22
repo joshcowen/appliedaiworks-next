@@ -3,11 +3,12 @@ import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import ContactForm from "@/components/ContactForm";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata: Metadata = {
   title: "Book Your Free AI Discovery Call — Applied AI Works",
   description:
-    "Get in touch with Applied AI Works. Email josh@appliedaiworks.com to book a free 30-minute discovery call for AI consulting in West Michigan.",
+    "Get in touch with Applied AI Works. Book a free 30-minute discovery call for AI consulting in West Michigan.",
 };
 
 const faqItems: FaqItem[] = [
@@ -178,13 +179,10 @@ export default function ContactPage() {
           <p className="text-on-surface-variant mb-8 text-lg">
             That works too.
           </p>
-          <a
-            href="mailto:josh@appliedaiworks.com"
-            className="kinetic-gradient text-white font-bold px-8 py-4 rounded-xl text-sm inline-flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform neural-glow"
-          >
+          <ObfuscatedEmail className="kinetic-gradient text-white font-bold px-8 py-4 rounded-xl text-sm inline-flex items-center justify-center gap-2 hover:scale-[1.01] transition-transform neural-glow">
             <span className="material-symbols-outlined text-sm">mail</span>
-            josh@appliedaiworks.com
-          </a>
+            Send an email
+          </ObfuscatedEmail>
         </div>
       </section>
     </>
