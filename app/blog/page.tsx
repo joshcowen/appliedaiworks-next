@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { getAllPostCards } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Practical AI Blog for Trades and Service Businesses",
@@ -22,7 +23,7 @@ const featuredPost = {
   excerpt: "The full story of what 3,500+ hours of AI work actually looks like — what worked, what didn't, and what it means for a service business with real constraints.",
 };
 
-const posts = [
+const staticPosts = [
   {
     title: "The $1,500 Question: Is an AI Audit Worth It?",
     category: "Pricing",
@@ -56,6 +57,9 @@ const posts = [
 ];
 
 export default function BlogPage() {
+  // Pipeline-generated MDX posts (newest first) show ahead of the original
+  // hand-built posts. imageAlt falls back to the title for pipeline posts.
+  const posts = [...getAllPostCards(), ...staticPosts];
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Blog", url: "https://www.appliedaiworks.com/blog" }]} />
