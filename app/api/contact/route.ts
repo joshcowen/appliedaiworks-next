@@ -5,7 +5,17 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, company, industry, description, bestTime } = await req.json();
+    const { name, email, company, industry, description, bestTime, _honey, _loadedAt } = await req.json();
+
+    // Honeypot check — bots fill this hidden field, humans don't
+    if (_honey) {
+      return NextResponse.json({ success: true });
+    }
+
+    // Timing check — legitimate users take more than 3 seconds to fill out a form
+    if (_loadedAt && Date.now() - _loadedAt < 3000) {
+      return NextResponse.json({ success: true });
+    }
 
     if (!name || !email || !description) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });

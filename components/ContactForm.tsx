@@ -23,7 +23,9 @@ export default function ContactForm() {
     industry: "",
     description: "",
     bestTime: "",
+    _honey: "",
   });
+  const [loadedAt] = useState(() => Date.now());
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -38,7 +40,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _loadedAt: loadedAt }),
       });
 
       if (res.ok) {
@@ -176,8 +178,20 @@ export default function ContactForm() {
           />
         </div>
 
+        {/* Honeypot — hidden from real users, bots fill it */}
+        <div style={{ position: "absolute", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
+          <input
+            type="text"
+            name="_honey"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form._honey}
+            onChange={handleChange}
+          />
+        </div>
+
         {status === "error" && (
-          <p className="text-sm text-red-400">Something went wrong. Email josh@appliedaiworks.com directly and I&apos;ll get back to you.</p>
+          <p className="text-sm text-red-400">Something went wrong. Try again or reach out directly.</p>
         )}
 
         <button
