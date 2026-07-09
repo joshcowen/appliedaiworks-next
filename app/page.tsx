@@ -7,9 +7,9 @@ import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import type { FaqItem } from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Applied AI Works | AI Consulting for West Michigan",
+  title: "AI Consulting West Michigan | Applied AI Works",
   description:
-    "Applied AI Works helps HVAC, plumbing, landscaping, and trades in West Michigan find where AI saves time and money. Start with a $1,500 AI Audit.",
+    "Applied AI Works helps trades and service businesses in West Michigan save time and cut costs. Start with a $1,500 AI Audit.",
 };
 
 const homeFaqs: FaqItem[] = [
