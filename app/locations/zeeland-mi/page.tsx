@@ -4,9 +4,9 @@ import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "AI Consulting for Zeeland, MI — Service Businesses",
+  title: "AI Consulting Zeeland MI | Applied AI Works",
   description:
-    "AI consulting for Zeeland, MI service businesses. Find where AI saves your operation the most time and money before competitors do. $1,500 AI Audit.",
+    "AI consulting for Zeeland MI trades and service businesses. Find out where AI saves you the most time and money. Book a $1,500 AI Audit.",
 };
 
 const industries = [
