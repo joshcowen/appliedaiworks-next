@@ -4,9 +4,9 @@ import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Is a $1,500 AI Audit Worth It? An Honest Breakdown",
+  title: "AI Audit Cost: Is $1,500 Worth It for Your Business?",
   description:
-    "An honest breakdown of whether a $1,500 AI Audit pays for itself. The math, who it makes sense for, and who should skip it.",
+    "See the real math on AI audit cost and pricing. We break down who gets their money's worth and who should skip it entirely.",
 };
 
 const articleSchema = {
