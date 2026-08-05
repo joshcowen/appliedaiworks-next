@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export default function Footer() {
   return (
@@ -20,9 +21,7 @@ export default function Footer() {
             <p className="text-sm text-on-surface-variant leading-relaxed mb-4">
               AI consulting for service businesses and skilled trades in West Michigan. Practical tools. Real results. No technical background required.
             </p>
-            <a href="mailto:josh@appliedaiworks.com" className="text-xs text-brand-orange hover:underline">
-              josh@appliedaiworks.com
-            </a>
+            <ObfuscatedEmail className="text-xs text-brand-orange hover:underline" />
           </div>
 
           <div>
