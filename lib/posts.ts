@@ -69,6 +69,51 @@ export function formatDate(dateStr: string): string {
   return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
+export interface BlogEntry {
+  slug: string;
+  lastModified: Date;
+}
+
+// Blog posts exist in two forms and the sitemap needs both:
+//   1. MDX in content/posts/, served by app/blog/[slug] (what the pipeline writes)
+//   2. Hand-built route directories at app/blog/<slug>/page.tsx (the originals)
+// Slugs come from the filename/directory name rather than frontmatter, because
+// that is what generateStaticParams uses. Keying off frontmatter could emit a
+// sitemap URL that 404s if the two ever drift apart.
+export function getAllBlogEntries(): BlogEntry[] {
+  const entries = new Map<string, BlogEntry>();
+
+  // Route-directory posts. Skip [slug] and any directory without a page file.
+  const routeDir = path.join(process.cwd(), "app/blog");
+  if (fs.existsSync(routeDir)) {
+    for (const e of fs.readdirSync(routeDir, { withFileTypes: true })) {
+      if (!e.isDirectory() || e.name.startsWith("[")) continue;
+      const pageFile = path.join(routeDir, e.name, "page.tsx");
+      if (!fs.existsSync(pageFile)) continue;
+      entries.set(e.name, { slug: e.name, lastModified: fs.statSync(pageFile).mtime });
+    }
+  }
+
+  // MDX posts. These win on a slug collision since they carry a real publish date.
+  if (fs.existsSync(postsDir)) {
+    for (const file of fs.readdirSync(postsDir)) {
+      if (!file.endsWith(".mdx")) continue;
+      const slug = file.replace(/\.mdx$/, "");
+      const full = path.join(postsDir, file);
+      const { data } = matter(fs.readFileSync(full, "utf-8"));
+      const parsed = data.date ? new Date(data.date) : null;
+      const lastModified =
+        parsed && !Number.isNaN(parsed.getTime()) ? parsed : fs.statSync(full).mtime;
+      entries.set(slug, { slug, lastModified });
+    }
+  }
+
+  // Array.from rather than spread: the project's TS target predates downlevelIteration.
+  return Array.from(entries.values()).sort(
+    (a, b) => b.lastModified.getTime() - a.lastModified.getTime()
+  );
+}
+
 export interface PostCard {
   title: string;
   category: string;

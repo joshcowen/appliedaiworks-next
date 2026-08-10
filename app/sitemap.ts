@@ -1,29 +1,52 @@
 import { MetadataRoute } from "next";
+import { getAllBlogEntries } from "@/lib/posts";
+
+const base = "https://www.appliedaiworks.com";
+
+// Non-blog pages stay listed by hand on purpose. Walking the app directory would
+// also sweep up drafts that are deliberately unlisted (see middleware.ts), so
+// anything new here is an explicit decision to publish it.
+const staticPages: { path: string; priority: number; changeFrequency: "monthly" | "weekly" }[] = [
+  { path: "", priority: 1, changeFrequency: "monthly" },
+  { path: "/ai-audit", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/services", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/about", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/roi-calculator", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/industries/hvac", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/industries/plumbing", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/industries/landscaping", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/industries/construction", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/industries/cleaning", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/industries/auto-repair", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/locations/holland-mi", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/locations/zeeland-mi", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/locations/grand-rapids-mi", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/locations/west-michigan", priority: 0.6, changeFrequency: "monthly" },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.appliedaiworks.com";
+  const now = new Date();
 
-  return [
-    { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    { url: `${base}/ai-audit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/roi-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${base}/blog/is-an-ai-audit-worth-it`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/blog/5-hvac-automations`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/blog/first-ai-tool-not-chatgpt`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/industries/hvac`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/industries/plumbing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/industries/landscaping`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/industries/construction`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/industries/cleaning`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/industries/auto-repair`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/locations/holland-mi`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/locations/zeeland-mi`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/locations/grand-rapids-mi`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/locations/west-michigan`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
-  ];
+  const pages: MetadataRoute.Sitemap = staticPages.map((p) => ({
+    url: `${base}${p.path}`,
+    lastModified: now,
+    changeFrequency: p.changeFrequency,
+    priority: p.priority,
+  }));
+
+  // Blog posts are discovered at build time from content/posts/*.mdx and the
+  // app/blog/<slug>/ route directories, so anything the pipeline publishes shows
+  // up here without this file being touched. lastModified is the real publish
+  // date or file mtime rather than "now".
+  const posts: MetadataRoute.Sitemap = getAllBlogEntries().map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: post.lastModified,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...pages, ...posts];
 }
