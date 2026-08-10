@@ -3,6 +3,7 @@ import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "AI Consulting for Auto Repair Shops — Applied AI Works",
@@ -250,6 +251,11 @@ export default function AutoRepairPage() {
           <FaqAccordion items={faqItems} />
         </div>
       </section>
+
+      <RelatedPosts
+        topic="auto-repair"
+        subhead="Practical write-ups on what actually works for auto repair operations."
+      />
 
       {/* CTA */}
       <section className="py-24">

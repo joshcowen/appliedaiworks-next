@@ -3,6 +3,7 @@ import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "AI Consulting for Plumbing Companies — Applied AI Works",
@@ -241,6 +242,11 @@ export default function PlumbingPage() {
           <FaqAccordion items={faqItems} />
         </div>
       </section>
+
+      <RelatedPosts
+        topic="plumbing"
+        subhead="Practical write-ups on what actually works for plumbing operations."
+      />
 
       {/* CTA */}
       <section className="py-24">

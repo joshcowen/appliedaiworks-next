@@ -3,6 +3,7 @@ import Link from "next/link";
 import FaqAccordion, { FaqItem } from "@/components/FaqAccordion";
 import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
   title: "AI Consulting for Cleaning Services — Applied AI Works",
@@ -250,6 +251,11 @@ export default function CleaningPage() {
           <FaqAccordion items={faqItems} />
         </div>
       </section>
+
+      <RelatedPosts
+        topic="cleaning"
+        subhead="Practical write-ups on what actually works for cleaning operations."
+      />
 
       {/* CTA */}
       <section className="py-24">

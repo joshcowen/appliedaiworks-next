@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import { getAllPostCards } from "@/lib/posts";
+import { getAllPostCards, staticPostCards } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Practical AI Blog for Trades and Service Businesses",
   description:
     "No hype. No buzzwords. Real tools, real examples, and honest takes on what AI can and can't do for service businesses and skilled trades in West Michigan.",
 };
+
+const FEATURED_HREF = "/blog/how-one-operator-saved-3500-hours";
 
 const featuredPost = {
   title: "How One Business Operator Saved 3,500+ Hours Using AI — And What That Means for Your Operation",
@@ -23,43 +25,16 @@ const featuredPost = {
   excerpt: "The full story of what 3,500+ hours of AI work actually looks like — what worked, what didn't, and what it means for a service business with real constraints.",
 };
 
-const staticPosts = [
-  {
-    title: "The $1,500 Question: Is an AI Audit Worth It?",
-    category: "Pricing",
-    date: "April 2026",
-    readTime: "8 min read",
-    excerpt: "A straight answer to the question most business owners are actually thinking: is the audit going to pay for itself? Here's how to do the math for your operation.",
-    href: "/blog/is-an-ai-audit-worth-it",
-    image: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539234/rightpeopleco/library/AdobeStock_143079956.jpg",
-    imageAlt: "Team reviewing business expenses and budget analysis",
-  },
-  {
-    title: "5 Things HVAC Companies Can Automate This Week",
-    category: "HVAC",
-    date: "April 2026",
-    readTime: "6 min read",
-    excerpt: "Not theory. Five specific automations that HVAC companies are using right now to get hours back every week — without replacing a single employee.",
-    href: "/blog/5-hvac-automations",
-    image: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539179/rightpeopleco/library/AdobeStock_129108292.jpg",
-    imageAlt: "HVAC technician servicing a water heater",
-  },
-  {
-    title: "Why Your First AI Tool Probably Shouldn't Be ChatGPT",
-    category: "Getting Started",
-    date: "March 2026",
-    readTime: "5 min read",
-    excerpt: "Most people start with ChatGPT, get generic outputs, and conclude AI isn't for them. Here's a better starting point for service business owners.",
-    href: "/blog/first-ai-tool-not-chatgpt",
-    image: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539208/rightpeopleco/library/AdobeStock_135379542.jpg",
-    imageAlt: "Freelancer working on a laptop",
-  },
-];
+
 
 export default function BlogPage() {
   // Pipeline-generated MDX posts (newest first) show ahead of the original
   // hand-built posts. imageAlt falls back to the title for pipeline posts.
-  const posts = [...getAllPostCards(), ...staticPosts];
+  // The case study renders in its own featured block above, so keep it out of the grid.
+  const posts = [
+    ...getAllPostCards(),
+    ...staticPostCards.filter((p) => p.href !== FEATURED_HREF),
+  ];
   return (
     <>
       <BreadcrumbSchema items={[{ name: "Home", url: "https://www.appliedaiworks.com" }, { name: "Blog", url: "https://www.appliedaiworks.com/blog" }]} />
@@ -102,7 +77,7 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
-            <Link href="/blog/how-one-operator-saved-3500-hours" className="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold hover:gap-3 transition-all">
+            <Link href={FEATURED_HREF} className="inline-flex items-center gap-2 text-brand-orange text-sm font-semibold hover:gap-3 transition-all">
               Read the case study
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>

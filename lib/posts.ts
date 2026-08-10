@@ -123,6 +123,107 @@ export interface PostCard {
   href: string;
   image: string;
   imageAlt: string;
+  // Industry slugs this post is specific to (e.g. ["hvac"]). Empty means the
+  // post applies to any industry and can be used as filler on any page.
+  topics?: string[];
+}
+
+// The four original posts that live as route directories rather than MDX.
+// This is the single source for their card metadata: the blog index and the
+// related-posts rail on industry pages both read from here, so titles and
+// excerpts can't drift between surfaces.
+export const staticPostCards: PostCard[] = [
+  {
+    title: "The $1,500 Question: Is an AI Audit Worth It?",
+    category: "Pricing",
+    date: "April 2026",
+    readTime: "8 min read",
+    excerpt:
+      "A straight answer to the question most business owners are actually thinking: is the audit going to pay for itself? Here's how to do the math for your operation.",
+    href: "/blog/is-an-ai-audit-worth-it",
+    image:
+      "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539234/rightpeopleco/library/AdobeStock_143079956.jpg",
+    imageAlt: "Team reviewing business expenses and budget analysis",
+    topics: [],
+  },
+  {
+    title: "5 Things HVAC Companies Can Automate This Week",
+    category: "HVAC",
+    date: "April 2026",
+    readTime: "6 min read",
+    excerpt:
+      "Not theory. Five specific automations that HVAC companies are using right now to get hours back every week — without replacing a single employee.",
+    href: "/blog/5-hvac-automations",
+    image:
+      "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539179/rightpeopleco/library/AdobeStock_129108292.jpg",
+    imageAlt: "HVAC technician servicing a water heater",
+    topics: ["hvac"],
+  },
+  {
+    title: "Why Your First AI Tool Probably Shouldn't Be ChatGPT",
+    category: "Getting Started",
+    date: "March 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Most people start with ChatGPT, get generic outputs, and conclude AI isn't for them. Here's a better starting point for service business owners.",
+    href: "/blog/first-ai-tool-not-chatgpt",
+    image:
+      "https://res.cloudinary.com/dh0xneapb/image/upload/v1774539208/rightpeopleco/library/AdobeStock_135379542.jpg",
+    imageAlt: "Freelancer working on a laptop",
+    topics: [],
+  },
+  {
+    title: "How One Operator Saved 3,500+ Hours Using AI",
+    category: "Case Study",
+    date: "March 2026",
+    readTime: "12 min read",
+    excerpt:
+      "What 3,500+ hours of AI work actually looks like. What worked, what didn't, and what it means for a service business with real constraints.",
+    href: "/blog/how-one-operator-saved-3500-hours",
+    image: "/josh-cowen-featured.jpg",
+    imageAlt: "Josh Cowen in his workshop",
+    topics: [],
+  },
+];
+
+// Posts for the related rail on an industry page: anything tagged for that
+// industry first, then industry-agnostic posts as filler. Posts tagged for a
+// *different* industry are left out entirely, so plumbing pages never surface
+// HVAC-specific reading.
+export function getRelatedPosts(topic: string, limit = 3): PostCard[] {
+  const all = [...getAllPostCards(), ...staticPostCards];
+  const key = topic.toLowerCase();
+  const specific = all.filter((p) => p.topics?.some((t) => t.toLowerCase() === key));
+  const general = all.filter((p) => !p.topics || p.topics.length === 0);
+
+  const seen = new Set<string>();
+  const out: PostCard[] = [];
+  for (const post of [...specific, ...general]) {
+    if (seen.has(post.href)) continue;
+    seen.add(post.href);
+    out.push(post);
+    if (out.length === limit) break;
+  }
+  return out;
+}
+
+// Industry slugs that have a page under /industries. A pipeline post is treated
+// as specific to one of these only if a tag matches, so a stray tag like
+// "Make.com" never pins a post to an industry.
+const INDUSTRY_SLUGS = [
+  "hvac",
+  "plumbing",
+  "landscaping",
+  "construction",
+  "cleaning",
+  "auto-repair",
+];
+
+function topicsFromTags(tags: string[] = [], categories: string[] = []): string[] {
+  const normalized = [...tags, ...categories].map((t) =>
+    t.toLowerCase().trim().replace(/\s+/g, "-")
+  );
+  return INDUSTRY_SLUGS.filter((slug) => normalized.includes(slug));
 }
 
 // Cards for the blog index, newest first, ready to render alongside the
@@ -139,5 +240,6 @@ export function getAllPostCards(): PostCard[] {
       href: `/blog/${data.slug}`,
       image: data.featuredImage,
       imageAlt: data.title,
+      topics: topicsFromTags(data.tags, data.categories),
     }));
 }
