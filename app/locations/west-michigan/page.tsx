@@ -5,7 +5,10 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata: Metadata = {
-  title: "AI Consulting West Michigan | Applied AI Works",
+  // Must stay distinct from the homepage title, which owns "AI Consulting West
+  // Michigan". SEO Pilot collided these two in commits 2b04d90 and 663fde9 by
+  // optimizing both pages for the same keyword.
+  title: "AI Consulting for West Michigan Service Businesses | Applied AI Works",
   description:
     "Applied AI Works helps West Michigan trades and service businesses save time with practical AI. Serving Holland, Zeeland, and Grand Rapids.",
 };

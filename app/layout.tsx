@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import MaterialSymbolsLoader from "@/components/MaterialSymbolsLoader";
+import { MATERIAL_SYMBOLS_HREF } from "@/lib/materialSymbols";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -65,6 +65,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        {/* Served from the document head so the request starts immediately.
+            Loading it from a useEffect meant it waited on hydration first. */}
+        <link rel="stylesheet" href={MATERIAL_SYMBOLS_HREF} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -85,7 +88,6 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} font-body selection:bg-brand-orange selection:text-white`}
       >
-        <MaterialSymbolsLoader />
         <Nav />
         {children}
         <Footer />
