@@ -60,12 +60,12 @@ export default function WestMichiganPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={3500} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
+                  <StatCounter target={5000} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Hours Saved</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
-                <div className="text-2xl font-headline font-bold text-on-surface">$600K+</div>
+                <div className="text-2xl font-headline font-bold text-on-surface">$850K+</div>
                 <div className="text-xs text-primary uppercase tracking-widest font-bold mt-1">Work Value</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
@@ -191,7 +191,7 @@ export default function WestMichiganPage() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="bg-surface-container-highest rounded-xl p-3 text-center">
                   <div className="font-headline text-2xl font-bold text-brand-orange">
-                    <StatCounter target={3500} suffix="+" />
+                    <StatCounter target={5000} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work</div>
                 </div>
@@ -210,7 +210,7 @@ export default function WestMichiganPage() {
                 I live here. I know the businesses, the industries, and the community. When I work with a West Michigan service company, I&apos;m not applying a generic playbook — I&apos;m working with context that only comes from being local.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                3,500+ hours of hands-on AI work. 80+ projects built. No developers. No technical background required.
+                5,000+ hours of hands-on AI work. 80+ projects built. No developers. No technical background required.
               </p>
               <Link href="/about" className="text-brand-orange text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
                 Learn more about Josh

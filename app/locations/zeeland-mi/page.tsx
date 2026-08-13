@@ -56,12 +56,12 @@ export default function ZeelandMiPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
                 <div className="text-2xl font-headline font-bold text-on-surface">
-                  <StatCounter target={3500} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
+                  <StatCounter target={5000} suffix="+" className="text-2xl font-headline font-bold text-on-surface" />
                 </div>
                 <div className="text-xs text-brand-orange uppercase tracking-widest font-bold mt-1">Hours Saved</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">
-                <div className="text-2xl font-headline font-bold text-on-surface">$600K+</div>
+                <div className="text-2xl font-headline font-bold text-on-surface">$850K+</div>
                 <div className="text-xs text-primary uppercase tracking-widest font-bold mt-1">Work Value</div>
               </div>
               <div className="bg-surface-container-low rounded-2xl p-4 border border-outline-variant/10">

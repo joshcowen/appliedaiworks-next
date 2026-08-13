@@ -198,7 +198,7 @@ export default function PlumbingPage() {
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-brand-orange">
-                    <StatCounter target={3500} suffix="+" />
+                    <StatCounter target={5000} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work logged</div>
                 </div>
@@ -222,7 +222,7 @@ export default function PlumbingPage() {
                 Not an enterprise consultant. A business operator who went deep on AI tools and built 80+ projects to figure out what actually works for service companies with real constraints.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                Every recommendation is based on 3,500+ hours of hands-on work, not a vendor playbook.
+                Every recommendation is based on 5,000+ hours of hands-on work, not a vendor playbook.
               </p>
               <Link href="/about" className="text-brand-orange text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
                 Learn more about Josh

@@ -98,7 +98,7 @@ export default function CaseStudyPost() {
             ))}
           </div>
           <p className="text-on-surface-variant text-lg leading-relaxed">
-            Three years ago I started keeping track. Every project I built using AI, every system I shipped, every tool I put into production, I logged it. When I added it up earlier this year, the number was 3,500+ hours of work I didn&apos;t have to do myself, worth somewhere north of $600,000 at market rates. I&apos;m going to tell you what that actually looks like, because a number that size usually means someone is being creative with the math. But I&apos;m not.
+            Back in December 2022 I started keeping track. Every project I built using AI, every system I shipped, every tool I put into production, I logged it. When I added it up earlier this year, the number was 3,500+ hours of work I didn&apos;t have to do myself, worth somewhere north of $600,000 at market rates. I&apos;m going to tell you what that actually looks like, because a number that size usually means someone is being creative with the math. But I&apos;m not.
           </p>
         </div>
       </section>

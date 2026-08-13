@@ -7,7 +7,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "About Josh Cowen | AI Consultant — Applied AI Works",
   description:
-    "Josh Cowen built 80+ AI tools, logged 3,500+ hours of hands-on AI work, and helped businesses find $600K+ in recoverable time — without a single developer.",
+    "Josh Cowen built 80+ AI tools, logged 5,000+ hours of hands-on AI work, and helped businesses find $850K+ in recoverable time — without a single developer.",
 };
 
 export default function AboutPage() {
@@ -100,12 +100,12 @@ export default function AboutPage() {
             </div>
             <div>
               <div className="font-headline text-4xl font-bold text-on-surface">
-                <StatCounter target={3500} suffix="+" />
+                <StatCounter target={5000} suffix="+" />
               </div>
               <div className="text-sm text-on-surface-variant mt-1">Hours of AI work logged</div>
             </div>
             <div>
-              <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={600} suffix="K+" /></div>
+              <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={850} suffix="K+" /></div>
               <div className="text-sm text-on-surface-variant mt-1">In recoverable time found</div>
             </div>
             <div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 Not everything worked. A lot of early experiments were a waste of time. But the ones that did work saved real hours — hours I used to spend on writing, research, building reports, formatting proposals.
               </p>
               <p className="text-on-surface-variant leading-relaxed">
-                So I kept going. Built more. Documented what worked and what didn&apos;t. Hit 3,500+ hours of hands-on AI work. Built 80+ projects. Started helping other businesses do the same thing.
+                So I kept going. Built more. Documented what worked and what didn&apos;t. Hit 5,000+ hours of hands-on AI work. Built 80+ projects. Started helping other businesses do the same thing.
               </p>
               <p className="text-on-surface-variant leading-relaxed">
                 That&apos;s what Applied AI Works is. Not a firm. Not a platform. Just someone who went deep on this and can show you what&apos;s actually worth doing.

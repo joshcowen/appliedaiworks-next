@@ -199,7 +199,7 @@ export default function AutoRepairPage() {
                 I&apos;m not an enterprise consultant. I&apos;m a business operator who went deep on AI tools and figured out what actually works for shops running on customer relationships and tight margins.
               </p>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                Every recommendation is grounded in 3,500+ hours of hands-on work — not a vendor playbook.
+                Every recommendation is grounded in 5,000+ hours of hands-on work — not a vendor playbook.
               </p>
               <Link href="/about" className="text-brand-orange text-sm font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">
                 Learn more about Josh
@@ -210,7 +210,7 @@ export default function AutoRepairPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="font-headline text-4xl font-bold text-brand-orange">
-                    <StatCounter target={3500} suffix="+" />
+                    <StatCounter target={5000} suffix="+" />
                   </div>
                   <div className="text-xs text-on-surface-variant mt-1">Hours of AI work logged</div>
                 </div>
@@ -221,7 +221,7 @@ export default function AutoRepairPage() {
                   <div className="text-xs text-on-surface-variant mt-1">AI projects built</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={600} suffix="K+" /></div>
+                  <div className="font-headline text-4xl font-bold text-primary">$<StatCounter target={850} suffix="K+" /></div>
                   <div className="text-xs text-on-surface-variant mt-1">In recoverable time found</div>
                 </div>
                 <div className="text-center">
