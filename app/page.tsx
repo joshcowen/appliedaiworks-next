@@ -296,8 +296,8 @@ export default function HomePage() {
               <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface mb-8 leading-tight">I built $600,000+ worth of&nbsp;work.<br />By myself. With&nbsp;AI.</h2>
               <div className="space-y-4 text-on-surface-variant leading-relaxed text-base mb-8">
                 <p>I&apos;m not a developer. I don&apos;t have a computer science degree. I&apos;m a business operator who got obsessed with AI tools and figured out how to use them to do the work of a much larger team.</p>
-                <p>Over the last two years, I&apos;ve completed 80+ projects &mdash; websites, automations, content systems, internal tools &mdash; work that would have taken a full team to deliver. I did it alone, using AI as leverage.</p>
-                <p>Now I help service business owners in West Michigan do the same thing. Not by making you into a tech person &mdash; by showing you exactly where AI fits into your operation and handing you the tools to use it.</p>
+                <p>I&apos;ve been using AI for real work since December 2022, a couple of weeks after ChatGPT came out. Since then I&apos;ve completed 80+ projects. Websites, automations, content systems, internal tools. Work that would have taken a full team to deliver, done alone, with AI doing most of the grunt work.</p>
+                <p>Now I help service business owners in West Michigan do the same thing. You don&apos;t need to become a tech person. I show you where AI fits into your operation and hand you the tools to use it.</p>
               </div>
               <Link href="/about" className="inline-flex items-center gap-2 text-brand-orange font-bold hover:gap-3 transition-all text-sm uppercase tracking-widest">
                 Read the full story <span className="material-symbols-outlined text-sm">north_east</span>

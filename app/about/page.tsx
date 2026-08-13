@@ -125,7 +125,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="font-headline text-3xl font-bold text-on-surface">How this started</h2>
               <p className="text-on-surface-variant leading-relaxed">
-                I run a marketing agency. A few years ago I started playing with AI tools to see if they could help with client work. I expected gimmicks. I found something that actually worked.
+                I run a marketing agency. I started using AI for real work in December 2022, a couple of weeks after ChatGPT came out, to see if it could help with client work. I expected gimmicks. I found something that actually worked.
               </p>
               <p className="text-on-surface-variant leading-relaxed">
                 Not everything worked. A lot of early experiments were a waste of time. But the ones that did work saved real hours — hours I used to spend on writing, research, building reports, formatting proposals.
