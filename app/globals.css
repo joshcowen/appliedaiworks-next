@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Material Symbols, self-hosted and subsetted to the icons this site uses.
+ *
+ * History worth knowing before changing this:
+ *   1. Originally requested from fonts.googleapis.com with every axis open,
+ *      which pulled a 3.96 MB font file.
+ *   2. Subsetting cut that to ~15 KB, but the <link rel="stylesheet"> sat in
+ *      <head> and was RENDER-BLOCKING on a third-party origin. Semrush flagged
+ *      Core Web Vitals declines on pages that had no other changes.
+ *   3. Now self-hosted. No DNS, no TLS, no third-party request in the critical
+ *      path, and the @font-face lives in this file so there is no extra CSS
+ *      request at all.
+ *
+ * To add an icon: add its name to lib/materialSymbols.ts, then regenerate the
+ * woff2 (that file's header comment has the command). Skipping the regenerate
+ * step makes the new icon render as its literal name.
+ */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/material-symbols-subset.woff2') format('woff2');
+}
+
 .kinetic-gradient { background: linear-gradient(135deg, #FF6B00 0%, #FF9E5E 100%); }
 .text-kinetic {
   background: linear-gradient(to right, #FF6B00, #FFD4B8);
@@ -28,6 +52,26 @@ input[type="range"]::-moz-range-thumb {
 .stat-counter { font-variant-numeric: tabular-nums; }
 
 .material-symbols-outlined {
+  /* The block below came from the Google stylesheet this site no longer loads.
+     Dropping the stylesheet without replacing it leaves icons falling back to
+     Inter, where they render as their own clipped label instead of a glyph.
+     font-size stays 24px to match what the Google CSS did: it loaded last and
+     beat Tailwind's text-* classes, so icons were already 24px unless an inline
+     style overrode them. Keep it that way or icon sizes shift sitewide. */
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   display: inline-flex;
   align-items: center;

@@ -3,9 +3,27 @@
 // WHY THIS FILE EXISTS: requesting the font with open-ended axis ranges pulls a
 // 3.96 MB file. Pinning the axes and subsetting to these icons brings it to 15 KB.
 //
-// ADDING A NEW ICON: add its name to this list, or it will render as literal text
-// (a "lightbulb" icon shows the word "lightbulb"), clipped by the 1em box in
-// globals.css so you actually just see a stray "l".
+// The font is now SELF-HOSTED at public/fonts/material-symbols-subset.woff2 with
+// the @font-face in globals.css. Loading it from fonts.googleapis.com put a
+// render-blocking third-party request in the critical path, which showed up as
+// Core Web Vitals declines in Semrush on pages that had no other changes.
+//
+// ADDING A NEW ICON is a TWO-STEP job:
+//   1. Add its name to the list below.
+//   2. Regenerate the woff2, or the icon renders as literal text (a "lightbulb"
+//      icon shows the word "lightbulb"), clipped by the 1em box in globals.css
+//      so you actually just see a stray "l".
+//
+// To regenerate the font file after editing the list, run from the project root:
+//
+//   URL=$(python3 -c "
+//   import re
+//   n = re.findall(r'^\s*\"([a-z_0-9]+)\",\s*$', open('lib/materialSymbols.ts').read(), re.M)
+//   print('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:'
+//         'opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=' + ','.join(n) + '&display=block')")
+//   UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126.0 Safari/537.36'
+//   curl -s -A "$UA" "$URL" | grep -o 'https://fonts.gstatic.com[^)]*' \
+//     | xargs curl -s -o public/fonts/material-symbols-subset.woff2
 //
 // To audit the codebase against this list, run this from the project root:
 //

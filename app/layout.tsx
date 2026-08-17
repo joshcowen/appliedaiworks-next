@@ -4,7 +4,6 @@ import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { MATERIAL_SYMBOLS_HREF } from "@/lib/materialSymbols";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -63,11 +62,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        {/* Served from the document head so the request starts immediately.
-            Loading it from a useEffect meant it waited on hydration first. */}
-        <link rel="stylesheet" href={MATERIAL_SYMBOLS_HREF} />
+        {/* Material Symbols is self-hosted (see globals.css) so there is no
+            third-party stylesheet in the critical path. Preloading the woff2
+            starts it early without blocking the first paint. The Google Fonts
+            preconnects are gone because next/font self-hosts Space Grotesk and
+            Inter at build time, so nothing here talks to Google anymore. */}
+        <link
+          rel="preload"
+          href="/fonts/material-symbols-subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
