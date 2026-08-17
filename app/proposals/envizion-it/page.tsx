@@ -248,8 +248,105 @@ export default function EnvizionProposalPage() {
         </div>
       </section>
 
-      {/* Stage 1 */}
+      {/* What this is worth */}
       <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="font-headline text-3xl font-bold text-on-surface mb-5">
+            What this is actually worth
+          </h2>
+          <p className="text-on-surface-variant leading-relaxed mb-4 max-w-2xl">
+            Here is the honest problem with putting a number on this. Call 3 ended with no name, no
+            message, and no ticket. It is not in Zendesk and it is not in your PSA. You have no
+            record it happened.
+          </p>
+          <p className="text-on-surface-variant leading-relaxed mb-10 max-w-2xl">
+            So the front door cannot be measured today. Not because nobody has run the math, but
+            because the system throws away the evidence every time it fails.
+          </p>
+
+          <div className="bg-surface-container-low border border-brand-orange/30 rounded-3xl p-8 mb-10 neural-glow">
+            <div className="text-xs text-on-surface-variant mb-2 uppercase tracking-wide font-bold">
+              The one number we can prove
+            </div>
+            <div className="font-headline text-4xl md:text-5xl font-bold text-brand-orange mb-4">
+              $1,560 a year
+            </div>
+            <p className="text-on-surface-variant text-sm leading-relaxed max-w-2xl">
+              AnswerForce bills by the minute. Across the three recordings, roughly 39% of Call 1 was
+              dead air while the agent typed into a form. At about 190 minutes a month, that is
+              somewhere near 74 minutes a month you are paying for silence. Not slow service.
+              Nothing at all.
+            </p>
+          </div>
+
+          <p className="text-on-surface-variant leading-relaxed mb-6 max-w-2xl">
+            The rest of it is simpler than a model. A client at 25 to 50 users is worth real
+            recurring money to you. This project is not.
+          </p>
+
+          <div className="bg-surface-container-low border border-outline-variant/10 rounded-2xl p-7 mb-6">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-outline-variant/30">
+                  <th className="text-left py-3 pr-4 font-medium text-on-surface-variant">
+                    If one client bills
+                  </th>
+                  <th className="text-left py-3 pl-4 font-medium text-on-surface-variant">
+                    Stage 1 costs about
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["$1,500 / month", "4 months of that one client"],
+                  ["$3,000 / month", "2 months of that one client"],
+                  ["$5,000 / month", "6 weeks of that one client"],
+                ].map(([a, b]) => (
+                  <tr key={a} className="border-b border-outline-variant/10 last:border-0">
+                    <td className="py-3 pr-4 text-on-surface tabular-nums whitespace-nowrap">{a}</td>
+                    <td className="py-3 pl-4 text-on-surface-variant">{b}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-xs text-on-surface-variant mt-5">
+              Illustrative figures, since I don&apos;t have your real ones. Substitute them and the
+              conclusion doesn&apos;t move.
+            </p>
+          </div>
+
+          <p className="text-on-surface-variant leading-relaxed mb-4 max-w-2xl">
+            These relationships run five years and up. At $3,000 a month, one client is worth around
+            $180,000 across that stretch. Stage 1 is about 3% of one client.
+          </p>
+          <p className="text-on-surface leading-relaxed mb-10 max-w-2xl font-medium">
+            Which means this does not have to be impressive. It has to be better than a stranger
+            reading a script. If it protects one relationship, one time, it has paid for itself
+            several times over.
+          </p>
+
+          <div className="bg-surface-container-low border-l-2 border-primary rounded-r-2xl p-7">
+            <h3 className="font-headline text-lg font-bold text-on-surface mb-3">
+              And you stop flying blind
+            </h3>
+            <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
+              About 1,200 calls a year go into AnswerForce and come back out as nothing you can
+              query. When I asked how often the urgent call tree runs all the way to the end, there
+              was no way to find out.
+            </p>
+            <p className="text-on-surface-variant text-sm leading-relaxed">
+              After Stage 1, every call has a recording, a transcript, a summary, and a
+              classification. You get the urgent versus normal mix, the after-hours load, and the
+              real fallthrough rate. You built your own PSA because you wanted your data in one
+              place. This is the last part of the business still running on somebody else&apos;s
+              clipboard.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stage 1 */}
+      <section className="py-20 bg-surface-container-lowest">
         <div className="max-w-4xl mx-auto px-6">
           <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-orange tracking-wide uppercase mb-4">
             Stage 1
@@ -308,7 +405,7 @@ export default function EnvizionProposalPage() {
       </section>
 
       {/* Stage 2 */}
-      <section className="py-20 bg-surface-container-lowest">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-orange tracking-wide uppercase mb-4">
             Stage 2
@@ -337,7 +434,7 @@ export default function EnvizionProposalPage() {
       </section>
 
       {/* Optional demo */}
-      <section className="py-20">
+      <section className="py-20 bg-surface-container-lowest">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-surface-container-low border border-brand-orange/30 rounded-3xl p-8 md:p-10 neural-glow">
             <div className="inline-flex items-center gap-2 text-xs font-bold text-brand-orange tracking-wide uppercase mb-4">
@@ -365,7 +462,7 @@ export default function EnvizionProposalPage() {
       </section>
 
       {/* How I bill */}
-      <section className="py-20 bg-surface-container-lowest">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-8">How this is billed</h2>
 
@@ -421,7 +518,7 @@ export default function EnvizionProposalPage() {
       </section>
 
       {/* What I need */}
-      <section className="py-20">
+      <section className="py-20 bg-surface-container-lowest">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-4">
             What I need from Envizion
@@ -462,7 +559,7 @@ export default function EnvizionProposalPage() {
       </section>
 
       {/* Where this goes */}
-      <section className="py-20 bg-surface-container-lowest">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-5">Where this goes</h2>
           <p className="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
@@ -479,7 +576,7 @@ export default function EnvizionProposalPage() {
       </section>
 
       {/* Next step */}
-      <section className="py-24">
+      <section className="py-24 bg-surface-container-lowest">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-surface-container-low border border-brand-orange/30 rounded-3xl p-8 md:p-12 text-center neural-glow">
             <h2 className="font-headline text-3xl font-bold text-on-surface mb-5">
