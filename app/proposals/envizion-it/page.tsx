@@ -336,9 +336,9 @@ export default function EnvizionProposalPage() {
             </p>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               After Stage 1, every call has a recording, a transcript, a summary, and a
-              classification. You get the urgent versus normal mix, the after-hours load, and the
-              real fallthrough rate. You built your own PSA because you wanted your data in one
-              place. This is the last part of the business still running on somebody else&apos;s
+              classification. You get the urgent versus normal mix, the after-hours load, and how
+              often the urgent tree actually runs out. You built your own PSA because you wanted
+              your data in one place. This is the last part of the business still running on somebody else&apos;s
               clipboard.
             </p>
           </div>
@@ -395,10 +395,11 @@ export default function EnvizionProposalPage() {
 
           <div className="mt-6 bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6">
             <p className="text-on-surface-variant text-sm leading-relaxed">
-              <span className="text-on-surface font-medium">On safety:</span> when the agent
-              is not confident about urgency, it escalates as urgent. That costs a few
-              unnecessary pages and protects the SLA. I would rather wake somebody up than miss a
-              real outage.
+              <span className="text-on-surface font-medium">On safety:</span> when the agent is
+              not sure how urgent a call is, it treats it as urgent. That means a tech occasionally
+              gets pulled in for something that turns out to be routine. That is the right trade,
+              because a false alarm costs somebody two minutes and a missed outage costs you an SLA
+              and a hard phone call.
             </p>
           </div>
         </div>
