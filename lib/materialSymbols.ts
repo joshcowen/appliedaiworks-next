@@ -4,16 +4,30 @@
 // 3.96 MB file. Pinning the axes and subsetting to these icons brings it to 15 KB.
 //
 // ADDING A NEW ICON: add its name to this list, or it will render as literal text
-// (a "lightbulb" icon shows the word "lightbulb"). To regenerate the whole list
-// from the codebase, run this from the project root:
+// (a "lightbulb" icon shows the word "lightbulb"), clipped by the 1em box in
+// globals.css so you actually just see a stray "l".
 //
-//   {
-//     grep -rhoE 'material-symbols-outlined[^>]*>[[:space:]]*[a-z_0-9]+' --include="*.tsx" . | sed -E 's/.*>[[:space:]]*//'
-//     grep -rhoE '\bicon:[[:space:]]*"[a-z_0-9]+"' --include="*.tsx" . | sed -E 's/.*"([a-z_0-9]+)"/\1/'
-//   } | grep -v node_modules | grep -vE '^$' | sort -u
+// To audit the codebase against this list, run this from the project root:
 //
-// Both greps are needed: icons appear as literal JSX children AND as `icon:` values
-// inside data arrays.
+//   python3 - <<'PY'
+//   import re, pathlib
+//   tag  = re.compile(r'material-symbols-outlined[^"]*"[^>]*>\s*([a-z_0-9]+)\s*</span>', re.S)
+//   icon = re.compile(r'\bicon:\s*"([a-z_0-9]+)"')
+//   used = set()
+//   for p in pathlib.Path('.').rglob('*.tsx'):
+//       if 'node_modules' in p.parts: continue
+//       t = p.read_text(encoding='utf-8', errors='replace')
+//       used |= set(tag.findall(t)) | set(icon.findall(t))
+//   listed = set(re.findall(r'^  "([a-z_0-9]+)",', pathlib.Path('lib/materialSymbols.ts').read_text(), re.M))
+//   print("MISSING:", sorted(used - listed))
+//   print("UNUSED :", sorted(listed - used))
+//   PY
+//
+// Both patterns are needed: icons appear as literal JSX children AND as `icon:`
+// values inside data arrays. This has to match across newlines (re.S) because a
+// formatted JSX tag puts the icon name on its own line. An earlier line-based
+// grep here silently missed every multi-line usage, which is how expand_more and
+// help shipped broken.
 
 export const MATERIAL_SYMBOL_NAMES = [
   "ac_unit",
@@ -21,6 +35,7 @@ export const MATERIAL_SYMBOL_NAMES = [
   "arrow_back",
   "arrow_downward",
   "arrow_forward",
+  "arrow_right",
   "article",
   "assignment",
   "attach_money",
@@ -51,8 +66,10 @@ export const MATERIAL_SYMBOL_NAMES = [
   "event",
   "event_available",
   "event_repeat",
+  "expand_more",
   "factory",
   "family_restroom",
+  "flag",
   "folder_copy",
   "forest",
   "format_quote",
@@ -61,6 +78,7 @@ export const MATERIAL_SYMBOL_NAMES = [
   "group_add",
   "groups",
   "handshake",
+  "help",
   "history",
   "hub",
   "info",
@@ -83,6 +101,7 @@ export const MATERIAL_SYMBOL_NAMES = [
   "progress_activity",
   "quiz",
   "rate_review",
+  "receipt_long",
   "repeat",
   "reply_all",
   "request_quote",
@@ -100,6 +119,7 @@ export const MATERIAL_SYMBOL_NAMES = [
   "thumb_up",
   "timer",
   "translate",
+  "trending_down",
   "trending_up",
   "update",
   "visibility_off",
