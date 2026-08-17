@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
+import HoursTable from "@/components/HoursTable";
+import { Row, RATE, sumRows, money } from "@/lib/hours";
 
 export const metadata: Metadata = {
   title: "AI Receptionist Proposal — Envizion IT | Applied AI Works",
@@ -8,78 +10,126 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const RATE = 300;
-
-type Row = { task: string; low: number; high: number };
-
 const stage1: Row[] = [
-  { task: "Platform setup, phone number, routing into your existing forward", low: 2, high: 3 },
-  { task: "Agent design: greeting, persona, capturing what the caller volunteers", low: 3, high: 4 },
-  { task: "Call routing: sales, support, specific person, everything else", low: 2, high: 3 },
-  { task: "Urgency judgment mapped to your four SLA tiers", low: 3, high: 4 },
-  { task: "Warm transfer and escalation through your existing calling groups", low: 4, high: 6 },
-  { task: "After-hours path, including relay mode", low: 2, high: 3 },
-  { task: "Ticket email into Support@EnvizionIT.com", low: 1, high: 2 },
-  { task: "Call logging, transcripts, and summaries", low: 2, high: 3 },
-  { task: "Testing and tuning against real call scenarios", low: 3, high: 4 },
-  { task: "Documentation and handoff", low: 2, high: 2 },
+  {
+    task: "Platform setup, phone number, routing into your existing forward",
+    low: 2,
+    high: 2,
+    detail:
+      "Standing up the voice platform, provisioning a number, and pointing your existing AnswerForce forward at it instead. Includes a rollback path, so if anything looks wrong on day one you are back on AnswerForce in about five minutes.",
+  },
+  {
+    task: "Agent design: greeting, persona, capturing what the caller volunteers",
+    low: 2,
+    high: 3,
+    detail:
+      "Writing how it talks. One consistent name, an Envizion greeting with no call-center disclaimer, and the logic that hears “this is Karen from Dr. Sterenberg’s office” and files both facts instead of asking for them again thirty seconds later.",
+  },
+  {
+    task: "Call routing: sales, support, specific person, everything else",
+    low: 1,
+    high: 2,
+    detail:
+      "The four branches already in your AnswerForce script. Working out which one the caller needs from how they open the call, and handling the ones who don’t fit neatly, without pushing anybody through a phone menu.",
+  },
+  {
+    task: "Urgency judgment mapped to your four SLA tiers",
+    low: 2,
+    high: 3,
+    detail:
+      "Teaching it urgent, high, normal, and low the way your team actually applies them, including how many users are affected. Also covers the Call 2 case: an existing normal ticket that needs to be bumped up because the customer says it can’t wait eight hours.",
+  },
+  {
+    task: "Warm transfer and escalation through your existing calling groups",
+    low: 3,
+    high: 4,
+    detail:
+      "Dialing Techs & Admins Urgent first, then All Envizion Urgent, retrying the way your script does today, and preserving the caller ID so whoever picks up can see which level it escalated from. Falls back to a ticket if the tree runs all the way out.",
+  },
+  {
+    task: "After-hours path, including relay mode",
+    low: 1,
+    high: 2,
+    detail:
+      "The second page of your call flow. Afthours 1, then Afterhours 2, and relay mode where the caller hangs up and the tech calls them back rather than holding the line open.",
+  },
+  {
+    task: "Ticket email into Support@EnvizionIT.com",
+    low: 1,
+    high: 1,
+    detail:
+      "Formatting the non-urgent ticket exactly the way Zendesk already expects it, so nothing changes on your side. Caller, company, callback number, and a clean summary of the problem in the customer’s own words rather than a form field.",
+  },
+  {
+    task: "Call logging, transcripts, and summaries",
+    low: 1,
+    high: 2,
+    detail:
+      "Every call recorded, transcribed, and summarized somewhere you can search it. This is also what shows you when the agent got something wrong, which is what the tuning hours below actually run on.",
+  },
+  {
+    task: "Testing and tuning against real call scenarios",
+    low: 4,
+    high: 6,
+    detail:
+      "The biggest line, and the one that does not get faster with AI. Forty to sixty test calls across every branch, urgent and normal, business hours and after hours, each one listened to and adjusted. A voice system can only be judged by ear, in real time, one call at a time.",
+  },
+  {
+    task: "Documentation and handoff",
+    low: 1,
+    high: 1,
+    detail:
+      "Written docs on how it is wired, how to change the greeting or the escalation order yourself, and how to fall back to AnswerForce. Plus a walkthrough with whoever on your team ends up owning it.",
+  },
 ];
 
 const stage2: Row[] = [
-  { task: "Zendesk API: contact lookup and open tickets", low: 4, high: 5 },
-  { task: "Your PSA: organization, VIP contact, account data", low: 4, high: 5 },
-  { task: "Caller ID matching, with spoken name and company as fallback", low: 2, high: 3 },
-  { task: "Conversation changes so the agent uses that context naturally", low: 2, high: 3 },
-  { task: "Context summary pushed to the tech on transfer", low: 2, high: 3 },
-  { task: "Testing and tuning", low: 2, high: 3 },
+  {
+    task: "Zendesk API: contact lookup and open tickets",
+    low: 2,
+    high: 3,
+    detail:
+      "Reading Zendesk so the agent knows the caller has a ticket open before they bring it up. Read-only access to users and tickets. Nothing writes to or changes an existing record.",
+  },
+  {
+    task: "Your PSA: organization, VIP contact, account data",
+    low: 2,
+    high: 3,
+    detail:
+      "The same lookup against the system you built, for company, VIP contacts, and account context. This is the one line that moves at whatever pace you can expose an endpoint, which is why it is listed as your side of the work.",
+  },
+  {
+    task: "Caller ID matching, with spoken name and company as fallback",
+    low: 2,
+    high: 2,
+    detail:
+      "Matching the incoming number to a person before the agent says a word. When the number is unknown, or somebody calls from a cell phone, it asks once and matches on name and company instead.",
+  },
+  {
+    task: "Conversation changes so the agent uses that context naturally",
+    low: 1,
+    high: 2,
+    detail:
+      "Knowing who somebody is and sounding like you know them are two different problems. This is the difference between reciting an account number back at them and just saying “hi Kelly, is this about the network drive?”",
+  },
+  {
+    task: "Context summary pushed to the tech on transfer",
+    low: 1,
+    high: 2,
+    detail:
+      "Instead of Cody getting a forty-second verbal briefing like he did on Call 2, the account, contact, ticket history, and issue land in front of him as the call connects.",
+  },
+  {
+    task: "Testing and tuning",
+    low: 3,
+    high: 4,
+    detail:
+      "Same as Stage 1, and it still does not compress. Verifying the lookups hit correctly, and making sure a wrong match or a missing record degrades gracefully instead of the agent confidently calling somebody by the wrong name.",
+  },
 ];
 
-const sum = (rows: Row[]) =>
-  rows.reduce((a, r) => ({ low: a.low + r.low, high: a.high + r.high }), { low: 0, high: 0 });
-
-const money = (h: number) => `$${(h * RATE).toLocaleString()}`;
-
-const s1 = sum(stage1);
-const s2 = sum(stage2);
-
-function HoursTable({ rows, total }: { rows: Row[]; total: { low: number; high: number } }) {
-  return (
-    <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
-      <table className="w-full min-w-[520px] text-sm">
-        <thead>
-          <tr className="border-b border-outline-variant/30">
-            <th className="text-left py-3 pr-4 font-medium text-on-surface-variant">Work</th>
-            <th className="text-right py-3 px-3 font-medium text-on-surface-variant whitespace-nowrap">Low</th>
-            <th className="text-right py-3 pl-3 font-medium text-on-surface-variant whitespace-nowrap">High</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.task} className="border-b border-outline-variant/10">
-              <td className="py-3 pr-4 text-on-surface-variant leading-relaxed">{r.task}</td>
-              <td className="py-3 px-3 text-right text-on-surface tabular-nums">{r.low}</td>
-              <td className="py-3 pl-3 text-right text-on-surface tabular-nums">{r.high}</td>
-            </tr>
-          ))}
-          <tr className="border-t-2 border-brand-orange/40">
-            <td className="py-4 pr-4 font-headline font-bold text-on-surface">Total hours</td>
-            <td className="py-4 px-3 text-right font-headline font-bold text-brand-orange tabular-nums text-lg">
-              {total.low}
-            </td>
-            <td className="py-4 pl-3 text-right font-headline font-bold text-brand-orange tabular-nums text-lg">
-              {total.high}
-            </td>
-          </tr>
-          <tr>
-            <td className="py-2 pr-4 text-on-surface-variant">At ${RATE}/hour</td>
-            <td className="py-2 px-3 text-right text-on-surface tabular-nums whitespace-nowrap">{money(total.low)}</td>
-            <td className="py-2 pl-3 text-right text-on-surface tabular-nums whitespace-nowrap">{money(total.high)}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-}
+const s1 = sumRows(stage1);
+const s2 = sumRows(stage2);
 
 export default function EnvizionProposalPage() {
   return (
@@ -240,8 +290,11 @@ export default function EnvizionProposalPage() {
             ))}
           </div>
 
-          <h3 className="font-headline text-xl font-bold text-on-surface mb-5">Hours forecast</h3>
-          <HoursTable rows={stage1} total={s1} />
+          <h3 className="font-headline text-xl font-bold text-on-surface mb-2">Hours forecast</h3>
+          <p className="text-on-surface-variant text-xs mb-5">
+            Hover or tap any line to see what that work actually involves.
+          </p>
+          <HoursTable rows={stage1} />
 
           <div className="mt-6 bg-surface-container-low border border-outline-variant/10 rounded-2xl p-6">
             <p className="text-on-surface-variant text-sm leading-relaxed">
@@ -275,8 +328,11 @@ export default function EnvizionProposalPage() {
             right first makes this part faster.
           </p>
 
-          <h3 className="font-headline text-xl font-bold text-on-surface mb-5">Hours forecast</h3>
-          <HoursTable rows={stage2} total={s2} />
+          <h3 className="font-headline text-xl font-bold text-on-surface mb-2">Hours forecast</h3>
+          <p className="text-on-surface-variant text-xs mb-5">
+            Hover or tap any line to see what that work actually involves.
+          </p>
+          <HoursTable rows={stage2} />
         </div>
       </section>
 
