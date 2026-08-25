@@ -8,7 +8,9 @@ export const metadata: Metadata = {
   // Must stay distinct from the homepage title, which owns "AI Consulting West
   // Michigan". SEO Pilot collided these two in commits 2b04d90 and 663fde9 by
   // optimizing both pages for the same keyword.
-  title: "AI Consulting for West Michigan Trades & Service Businesses",
+  // Avoid "&" here: it renders as "&amp;" and audit tools count the raw HTML,
+  // which silently adds 4 characters and pushes the title back out of range.
+  title: "AI Consulting Across West Michigan for Service Businesses",
   description:
     "Applied AI Works helps West Michigan trades and service businesses save time with practical AI. Serving Holland, Zeeland, and Grand Rapids.",
 };
