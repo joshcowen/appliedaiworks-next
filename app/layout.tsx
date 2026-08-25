@@ -32,9 +32,16 @@ const organizationSchema = {
   url: "https://www.appliedaiworks.com",
   description:
     "AI consulting for service businesses and skilled trades in West Michigan. AI audits, training, and implementation. Based in Zeeland, MI.",
+  // sameAs is how Google and AI assistants confirm the website, the LinkedIn
+  // page, and the Google Business Profile are all the same entity. Add the GBP
+  // URL here once verification clears (it looks like https://g.page/...), and
+  // add Facebook or Instagram if business accounts ever exist.
+  sameAs: ["https://www.linkedin.com/company/applied-ai-works-llc"],
   founder: {
     "@type": "Person",
     name: "Josh Cowen",
+    url: "https://www.appliedaiworks.com/about",
+    sameAs: ["https://www.linkedin.com/in/jcowen"],
   },
   address: {
     "@type": "PostalAddress",
@@ -48,6 +55,7 @@ const organizationSchema = {
   areaServed: [
     { "@type": "City", name: "Holland", containedInPlace: { "@type": "State", name: "Michigan" } },
     { "@type": "City", name: "Zeeland", containedInPlace: { "@type": "State", name: "Michigan" } },
+    { "@type": "City", name: "Hudsonville", containedInPlace: { "@type": "State", name: "Michigan" } },
     { "@type": "City", name: "Grand Rapids", containedInPlace: { "@type": "State", name: "Michigan" } },
   ],
   priceRange: "$$",

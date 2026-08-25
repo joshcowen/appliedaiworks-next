@@ -22,6 +22,19 @@ export default function Footer() {
               AI consulting for service businesses and skilled trades in West Michigan. Practical tools. Real results. No technical background required.
             </p>
             <ObfuscatedEmail className="text-xs text-brand-orange hover:underline" />
+            <div className="mt-3">
+              {/* A real crawlable link, not just schema. Search engines weigh an
+                  actual outbound link to the profile alongside the sameAs entry. */}
+              <a
+                href="https://www.linkedin.com/company/applied-ai-works-llc"
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-brand-orange transition-colors"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>open_in_new</span>
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           <div>
