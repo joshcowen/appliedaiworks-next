@@ -8,7 +8,7 @@ import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 export const metadata: Metadata = {
   title: "Book Your Free AI Discovery Call — Applied AI Works",
   description:
-    "Get in touch with Applied AI Works. Book a free 30-minute discovery call for AI consulting in West Michigan.",
+    "Get in touch with Applied AI Works. Book a free 30-minute discovery call about AI for your service business in West Michigan. No pitch.",
 };
 
 const faqItems: FaqItem[] = [

@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "How One Business Operator Saved 3,500+ Hours Using AI",
   description:
-    "The real story of 80+ AI projects, 3,500+ hours of work recovered, and $600K+ in equivalent value. What worked, what didn't, and what it means for a service business.",
+    "The real story of 80+ AI projects and 3,500+ hours of work recovered. What worked, what didn't, and what it means for a service business.",
 };
 
 const articleSchema = {

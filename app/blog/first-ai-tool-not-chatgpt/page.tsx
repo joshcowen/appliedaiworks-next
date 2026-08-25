@@ -4,7 +4,7 @@ import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "The Best First AI Tool for Service Businesses",
+  title: "The Best First AI Tool for Service Businesses (Not ChatGPT)",
   description:
     "Skip ChatGPT. These three AI tools actually fit how trades and service businesses work. Find the right first AI tool for your team.",
 };

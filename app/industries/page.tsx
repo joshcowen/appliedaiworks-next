@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "AI Consulting by Industry — Applied AI Works",
   description:
-    "Applied AI Works helps HVAC, plumbing, landscaping, construction, cleaning, and auto repair businesses in West Michigan find where AI saves real time and money.",
+    "Applied AI Works helps HVAC, plumbing, landscaping, construction, cleaning, and auto repair businesses in West Michigan find where AI saves real time and",
 };
 
 const industries = [
