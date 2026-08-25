@@ -1,0 +1,97 @@
+---
+title: "How to Automate Repetitive Tasks in a 10- to 20-Person Service Business Using Make.com"
+description: "Learn how to automate repetitive tasks in a 10-person service business using Make.com. Four real workflows, build times, costs, and step-by-step setup."
+date: "2026-08-25"
+slug: "automate-repetitive-tasks-service-business-make"
+categories: ["Automation"]
+tags: ["Make.com", "automation", "service business", "HVAC", "plumbing", "electrical", "small business", "workflow automation", "Twilio", "QuickBooks"]
+excerpt: "A 10- to 20-person service business can automate lead follow-up, review requests, invoice reminders, and daily crew scheduling using Make.com with no developer and no code. This post covers the four automations that pay off fastest, the real build time for each, and the exact Make.com modules to use."
+featuredImage: "https://res.cloudinary.com/dh0xneapb/image/upload/v1774540199/rightpeopleco/library/AdobeStock_426885098.jpg"
+metaTitle: "Automate Repetitive Tasks with Make.com | Service Business"
+metaDescription: "Learn how to automate repetitive tasks in a 10-person service business using Make.com. Four real workflows, build times, costs, and step-by-step setup."
+focusKeyword: "automate repetitive tasks service business Make.com,Make.com for small business,service business automation,HVAC business automation tools"
+isPillar: false
+schemaJson: "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"@id\":\"https://www.appliedaiworks.com/blog/automate-repetitive-tasks-service-business-make#faq\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does Make.com cost for a small service business?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The free plan covers 1,000 operations per month and two active scenarios. Most shops doing 50 to 100 jobs a month will outgrow it within a few months. The Core plan is $9 per month and covers 10,000 operations. The Pro plan at $16 per month adds unlimited active scenarios. Very few 10- to 20-person service businesses need anything beyond Pro.\"}},{\"@type\":\"Question\",\"name\":\"Do I need to know how to code to use Make.com?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. Make.com is a visual builder. You connect modules by clicking and dragging, map data fields by clicking inside text boxes, and test runs with a single button. The learning curve is real but it is measured in hours, not weeks. Someone comfortable with spreadsheets will pick it up in a weekend.\"}},{\"@type\":\"Question\",\"name\":\"What service business software does Make.com connect to?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Make.com has native integrations for Jobber, HouseCall Pro, QuickBooks Online, Google Sheets, Gmail, Twilio, Slack, Airtable, and Jotform. If your software supports webhooks, Make.com can connect to it even without a native integration. ServiceTitan requires API access that is gated by plan tier, so confirm before assuming it works.\"}},{\"@type\":\"Question\",\"name\":\"How long does it take to see a return on the time spent building these automations?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Josh Cowen at Applied AI Works estimates the review request automation pays back its build time within the first two weeks for any business doing more than 20 jobs a month, assuming even a modest lift in review volume translates to one additional job won. The overdue invoice nudge typically recovers outstanding receivables within the first month.\"}},{\"@type\":\"Question\",\"name\":\"What is the biggest mistake service businesses make when starting with Make.com?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Trying to automate a process they do not fully understand yet. If your quoting process is inconsistent, automating it makes it consistently inconsistent. Clean up the manual process first, run it the same way five times, then automate it. Automation multiplies whatever is already there, good or broken.\"}}]}"
+---
+
+A 10- to 20-person service business can automate its biggest time-drains, job confirmations, review requests, invoice follow-ups, and lead routing, using Make.com in a single afternoon per workflow. You do not need a developer. You need a Make.com account (free tier works to start), your existing tools connected as "modules," and a clear picture of which manual step is costing you the most hours. The four automations that pay off fastest: (1) new lead to CRM with a text confirmation sent automatically, (2) job-complete trigger that fires a Google review request via SMS, (3) overdue invoice nudge that pulls from QuickBooks and sends a polite text, and (4) a daily job schedule digest pushed to your crew's phones each morning. Each of these takes two to four hours to build the first time and then runs without anyone touching it.
+
+## Why Make.com and Not Something Else?
+
+There are three tools in this category that people actually use: Zapier, Make.com, and n8n. Zapier is the simplest but gets expensive fast once you have real volume. n8n is free and powerful but requires some comfort on the command line. Make.com sits in the middle. It is visual, the free tier covers 1,000 operations a month, and the $9/month Core plan covers most small service businesses entirely. For a 10- to 20-person shop running a few hundred jobs a month, Make.com is the right starting point. That is the opinion from Josh Cowen at Applied AI Works, based on actual implementations with trades businesses in West Michigan, not from a feature comparison chart.
+
+## What Does "Operation" Mean in Make.com?
+
+Every time Make.com reads or writes a piece of data, that counts as one operation. A scenario that receives a form submission, creates a CRM contact, and sends a text uses three operations per run. On the free plan you get 1,000 a month. If you run 200 jobs a month and each job triggers a two-step scenario, that is 400 operations. You have room to spare. Once you add more workflows, upgrade to the $9 Core plan. Do not let the operations concept scare you off before you even start.
+
+## The Four Automations Worth Building First
+
+### 1\. New Lead to CRM Plus Instant Text Confirmation
+
+Here is the problem: a potential customer fills out your website contact form at 7 p.m. Nobody sees it until morning. By then they have called two other companies. The fix is a Make.com scenario that watches your form tool (Jotform, Gravity Forms, Typeform, whichever you use), creates or updates a contact in your CRM (ServiceTitan, HouseCall Pro, Jobber, or even a Google Sheet if that is what you have), and fires a text message through Twilio or SimpleTexting within 90 seconds of submission.
+
+Build time: two to three hours the first time. Setup cost: Twilio charges roughly $0.0079 per outbound SMS. On 100 leads a month that is under a dollar. The payoff is real. Responding to a lead within five minutes versus 30 minutes makes a measurable difference in contact rate, and you are doing it automatically while your crew is still on the job site.
+
+The Make.com modules you need: a webhook or form-watch trigger, an HTTP or CRM module to create the contact, and a Twilio or SMS module to send the message. Connect them in order, map the fields, turn it on.
+
+### 2\. Job-Complete Review Request
+
+Google reviews are the currency of a local service business. Most owners know they should ask for them. Almost nobody does it consistently because it feels awkward to remember in the moment. Here is the fix: when a job is marked complete in your field service software, Make.com sends the customer a text four hours later with a short message and your Google review link.
+
+The trigger depends on your software. Jobber, HouseCall Pro, and ServiceTitan all have Make.com integrations or can fire webhooks on status changes. Map the customer phone number, the technician name, and the job address into your message template. Personalization matters. "Hey Linda, this is Mike from Apex Plumbing. Really appreciate you having us out to your place on Maple today. If you have 90 seconds, a Google review means a lot to a small business." That message, sent automatically four hours after job close, will outperform any email campaign you have ever run.
+
+Build time: two hours if your field software supports webhooks. Add another hour if you need to use a polling trigger instead.
+
+### 3\. Overdue Invoice Nudge
+
+Chasing invoices is one of the most demoralizing tasks in a small business. Make.com can watch QuickBooks Online for invoices that hit 7 days past due and send the customer a friendly text. Not a threat. A reminder. Something like: "Hey Dave, just checking in on invoice #1042 from Horizon Electric. Total is $340. You can pay online here: \[link\]. Questions? Call us at 616-555-0140." Most people pay within the hour. They forgot. The text reminded them.
+
+The Make.com module for QuickBooks Online is built in. You set a schedule trigger (runs every morning at 8 a.m.), pull invoices with a status of "overdue" and a due date more than 7 days ago, filter out ones you have already texted, and send the message. You will want a simple Google Sheet or Airtable base to track which invoice IDs have already received a nudge so you do not double-send.
+
+Build time: three to four hours including the deduplication logic.
+
+### 4\. Daily Job Schedule Digest to Your Crew
+
+Every morning someone on your team spends 20 minutes figuring out who goes where. Make.com can pull tomorrow's jobs from your scheduling software at 6 a.m., format them into a clean list by technician, and push each tech a text or a message in your group chat with their stops for the day. No dispatcher needed for that task. Your dispatcher can spend that 20 minutes on something that actually needs a human.
+
+If your scheduling software does not have a Make.com integration, pull the data from a Google Sheet your dispatcher keeps updated. It is not elegant but it works, and working beats perfect.
+
+## The Actual Setup Process in Make.com
+
+1.  Create a free account at make.com.
+2.  Click "Create a new scenario."
+3.  Add your trigger module first. This is the thing that starts the automation, a form submission, a schedule, a webhook, a CRM status change.
+4.  Click the small circle to the right of the trigger and add your next module. This might be a filter, a CRM action, or an SMS send.
+5.  Map fields by clicking inside any text box and selecting from the data that came in on the trigger. Make.com shows you what is available.
+6.  Run a test with real or sample data. Check the output of each module.
+7.  Turn the scenario on. Watch the first few runs manually to confirm it behaves.
+
+The interface is visual and forgiving. If a module fails, Make.com shows you exactly where and why. It is closer to wiring a control panel than writing code.
+
+## What to Do Before You Build Anything
+
+Map the manual process first. Write down every step a human currently takes to complete the task. Note which steps involve judgment and which are just moving data from one place to another. Automate the data-moving steps. Keep the judgment steps with your people. That boundary is where the time savings come from and where the mistakes happen if you ignore it.
+
+If you want help figuring out which automations will have the biggest impact on your specific operation, that is exactly what the [AI Audit](https://www.appliedaiworks.com/ai-audit) covers. It is a $1,500 engagement that produces a specific roadmap for your business, not a generic list of tools to consider. Or if you want to talk it through first, [start with a free call](https://www.appliedaiworks.com/contact).
+
+## Frequently Asked Questions
+
+### How much does Make.com cost for a small service business?
+
+The free plan covers 1,000 operations per month and two active scenarios. Most shops doing 50 to 100 jobs a month will outgrow it within a few months. The Core plan is $9 per month and covers 10,000 operations. The Pro plan at $16 per month adds unlimited active scenarios. Very few 10- to 20-person service businesses need anything beyond Pro.
+
+### Do I need to know how to code to use Make.com?
+
+No. Make.com is a visual builder. You connect modules by clicking and dragging, map data fields by clicking inside text boxes, and test runs with a single button. The learning curve is real but it is measured in hours, not weeks. Someone comfortable with spreadsheets will pick it up in a weekend.
+
+### What service business software does Make.com connect to?
+
+Make.com has native integrations for Jobber, HouseCall Pro, QuickBooks Online, Google Sheets, Gmail, Twilio, Slack, Airtable, and Jotform. If your software supports webhooks, Make.com can connect to it even without a native integration. ServiceTitan requires API access that is gated by plan tier, so confirm before assuming it works.
+
+### How long does it take to see a return on the time spent building these automations?
+
+Josh Cowen at Applied AI Works estimates the review request automation pays back its build time within the first two weeks for any business doing more than 20 jobs a month, assuming even a modest lift in review volume translates to one additional job won. The overdue invoice nudge typically recovers outstanding receivables within the first month.
+
+### What is the biggest mistake service businesses make when starting with Make.com?
+
+Trying to automate a process they do not fully understand yet. If your quoting process is inconsistent, automating it makes it consistently inconsistent. Clean up the manual process first, run it the same way five times, then automate it. Automation multiplies whatever is already there, good or broken.
