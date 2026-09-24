@@ -230,7 +230,7 @@ export default function LakeshorePage() {
                 I would rather be straight about why I am doing this than pretend it is pure generosity.
               </p>
               <p>
-                Applied AI Works is new. I do not have a wall of testimonials yet, and the honest way to get one is to do real work for people who will tell the truth about how it went. You all know me and you will not blow smoke, which is exactly what makes it worth something.
+                Applied AI Works is new. I do not have a wall of testimonials yet, and the honest way to get one is to do real work for people who will tell the truth about how it went. You all are getting to know me and you will not blow smoke, which is exactly what makes it worth something.
               </p>
               <p>
                 So if what I build actually helps, two things. Leave an honest Google review, and let me write up what we did so other business owners can see a real example instead of a claim.
