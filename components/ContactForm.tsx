@@ -15,7 +15,28 @@ const industries = [
   "Other Service Business",
 ];
 
-export default function ContactForm() {
+interface Props {
+  /** Override the card heading. Defaults to the discovery-call framing. */
+  heading?: string;
+  /** Override the line under the heading. */
+  subhead?: string;
+  /** Label for the big textarea. */
+  descriptionLabel?: string;
+  descriptionPlaceholder?: string;
+  /** Text on the submit button. */
+  submitLabel?: string;
+  /** Tags the submission so Josh can tell which page it came from. */
+  source?: string;
+}
+
+export default function ContactForm({
+  heading,
+  subhead,
+  descriptionLabel,
+  descriptionPlaceholder,
+  submitLabel,
+  source,
+}: Props = {}) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -40,7 +61,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, _loadedAt: loadedAt }),
+        body: JSON.stringify({ ...form, _loadedAt: loadedAt, source }),
       });
 
       if (res.ok) {
@@ -73,9 +94,9 @@ export default function ContactForm() {
         <div className="w-12 h-12 kinetic-gradient rounded-xl flex items-center justify-center mb-4">
           <span className="material-symbols-outlined text-white" style={{ fontVariationSettings: "'FILL' 1" }}>calendar_month</span>
         </div>
-        <h2 className="font-headline text-xl font-bold text-on-surface mb-2">Book a free discovery call</h2>
+        <h2 className="font-headline text-xl font-bold text-on-surface mb-2">{heading ?? "Book a free discovery call"}</h2>
         <p className="text-on-surface-variant text-sm leading-relaxed">
-          30 minutes. No pitch. Tell me what&apos;s going on and I&apos;ll tell you honestly if an audit makes sense.
+          {subhead ?? "30 minutes. No pitch. Tell me what\u2019s going on and I\u2019ll tell you honestly if an audit makes sense."}
         </p>
       </div>
 
@@ -149,7 +170,7 @@ export default function ContactForm() {
 
         <div>
           <label className="block text-xs font-semibold text-on-surface-variant mb-1.5" htmlFor="description">
-            What would you like help with? <span className="text-brand-orange">*</span>
+            {descriptionLabel ?? "What would you like help with?"} <span className="text-brand-orange">*</span>
           </label>
           <textarea
             id="description"
@@ -158,7 +179,7 @@ export default function ContactForm() {
             rows={4}
             value={form.description}
             onChange={handleChange}
-            placeholder="Briefly describe what's eating up your time or where you think AI might help. Don't worry about getting it perfect."
+            placeholder={descriptionPlaceholder ?? "Briefly describe what's eating up your time or where you think AI might help. Don't worry about getting it perfect."}
             className="w-full bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-3 text-sm text-on-surface placeholder:text-on-surface-variant/40 focus:outline-none focus:border-brand-orange/60 transition-colors resize-none"
           />
         </div>
@@ -207,7 +228,7 @@ export default function ContactForm() {
           ) : (
             <>
               <span className="material-symbols-outlined text-sm">send</span>
-              Request a Free Call
+              {submitLabel ?? "Request a Free Call"}
             </>
           )}
         </button>

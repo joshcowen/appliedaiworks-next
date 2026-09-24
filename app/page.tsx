@@ -3,7 +3,6 @@ import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
 import RoiCalculator from "@/components/RoiCalculator";
 import FaqAccordion from "@/components/FaqAccordion";
-import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import type { FaqItem } from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
@@ -462,11 +461,13 @@ export default function HomePage() {
               The AI Audit gives you a clear, prioritized picture of where AI saves you the most time and money &mdash; in your specific operation, not a generic playbook.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-              <ObfuscatedEmail className="kinetic-gradient text-white font-bold px-10 py-5 rounded-2xl neural-glow text-lg hover:scale-[1.02] active:scale-95 transition-transform">
+              {/* Both go somewhere that works. This was a mailto, which does
+                  nothing at all for anyone without a mail client configured. */}
+              <Link href="/contact" className="kinetic-gradient text-white font-bold px-10 py-5 rounded-2xl neural-glow text-lg hover:scale-[1.02] active:scale-95 transition-transform">
                 Book Your AI Audit &mdash; $1,500
-              </ObfuscatedEmail>
-              <Link href="/contact" className="bg-surface-variant text-on-surface font-bold px-10 py-5 rounded-2xl text-lg border border-outline-variant/30 hover:border-brand-orange/40 transition-colors">
-                Start with a Free Call
+              </Link>
+              <Link href="/ai-audit" className="bg-surface-variant text-on-surface font-bold px-10 py-5 rounded-2xl text-lg border border-outline-variant/30 hover:border-brand-orange/40 transition-colors">
+                See What&apos;s In the Audit
               </Link>
             </div>
             <p className="text-on-surface-variant text-sm mt-6 relative z-10">Free 30-min discovery call first. No commitment, no pressure.</p>

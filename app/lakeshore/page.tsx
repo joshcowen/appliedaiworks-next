@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Free Automation for Lakeshore Business Connections",
@@ -268,19 +269,34 @@ export default function LakeshorePage() {
 
       {/* CTA */}
       <section id="start" className="py-24 bg-surface-container-lowest scroll-mt-16">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">
-            Ready when you are
-          </h2>
-          <p className="text-on-surface-variant mb-8 text-lg leading-relaxed">
-            Do the week of noticing first. Then send me your list, or just grab me at the next meeting and we will find thirty minutes.
-          </p>
-          <ObfuscatedEmail className="kinetic-gradient text-white font-bold px-10 py-5 rounded-2xl neural-glow text-lg inline-flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-transform">
-            <span className="material-symbols-outlined">mail</span>
-            Send me your list
-          </ObfuscatedEmail>
-          <p className="text-xs text-on-surface-variant mt-4">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">
+              Ready when you are
+            </h2>
+            <p className="text-on-surface-variant text-lg leading-relaxed">
+              Do the week of noticing first. Then send me your list below, or just grab me at the next meeting and we will find thirty minutes.
+            </p>
+          </div>
+
+          <div className="max-w-xl mx-auto text-left">
+            {/* The form, not a mailto. A mailto silently does nothing for anyone
+                whose computer has no mail client set up, which is most people who
+                live in Gmail in a browser tab. The source prop tags the email so
+                Lakeshore requests are obvious in the inbox. */}
+            <ContactForm
+              source="Lakeshore"
+              submitLabel="Send It Over"
+              heading="Send me your list"
+              subhead="Free build for Lakeshore Business Connections members. One per business. Tell me what you noticed this week and I will tell you which one I can build."
+              descriptionLabel="What ate up your time this week?"
+              descriptionPlaceholder="The thing you did more than twice. Quoting, follow-ups, scheduling, the same email over and over. List a few if you have them. Rough is fine."
+            />
+          </div>
+
+          <p className="text-xs text-on-surface-variant mt-6 text-center">
             One per business. No deadline, but the calendar fills up in the order people ask.
+            {" "}Prefer email? <ObfuscatedEmail className="text-brand-orange hover:underline" />
           </p>
         </div>
       </section>

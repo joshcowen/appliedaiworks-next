@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, company, industry, description, bestTime, _honey, _loadedAt } = await req.json();
+    const { name, email, company, industry, description, bestTime, source, _honey, _loadedAt } = await req.json();
 
     // Honeypot check — bots fill this hidden field, humans don't
     if (_honey) {
@@ -33,7 +33,9 @@ export async function POST(req: NextRequest) {
       from: `"Applied AI Works" <${process.env.GMAIL_USER}>`,
       to: "josh@appliedaiworks.com",
       replyTo: email,
-      subject: `New inquiry from ${name} — ${company || "No company listed"}`,
+      subject: source
+        ? `[${source}] ${name} — ${company || "No company listed"}`
+        : `New inquiry from ${name} — ${company || "No company listed"}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #FF6B00; padding: 20px 24px; border-radius: 8px 8px 0 0;">

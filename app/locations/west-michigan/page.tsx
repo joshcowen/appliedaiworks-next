@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata: Metadata = {
   // Must stay distinct from the homepage title, which owns "AI Consulting West
@@ -128,9 +127,9 @@ export default function WestMichiganPage() {
               </div>
               <h3 className="font-headline text-xl font-bold text-on-surface mb-3">Muskegon</h3>
               <p className="text-on-surface-variant text-sm leading-relaxed mb-5">Muskegon&apos;s service economy — HVAC, construction, auto repair, landscaping — runs on tight margins and small teams. AI tools can meaningfully reduce the time spent on admin without significant upfront investment.</p>
-              <ObfuscatedEmail className="inline-flex items-center gap-1 text-xs text-on-surface-variant font-bold uppercase tracking-widest hover:text-brand-orange hover:gap-2 transition-all">
+              <Link href="/contact" className="inline-flex items-center gap-1 text-xs text-on-surface-variant font-bold uppercase tracking-widest hover:text-brand-orange hover:gap-2 transition-all">
                 Reach out about Muskegon <span className="material-symbols-outlined text-xs">north_east</span>
-              </ObfuscatedEmail>
+              </Link>
             </div>
             <div className="bg-surface-container-low border border-outline-variant/10 rounded-3xl p-8 hover:bg-surface-container transition-all">
               <div className="w-10 h-10 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-5">
@@ -138,9 +137,9 @@ export default function WestMichiganPage() {
               </div>
               <h3 className="font-headline text-xl font-bold text-on-surface mb-3">Kalamazoo Area</h3>
               <p className="text-on-surface-variant text-sm leading-relaxed mb-5">Kalamazoo&apos;s trades and service businesses face the same challenges as the rest of West Michigan — too much admin, not enough hours, and a market that&apos;s increasingly competitive. AI helps level that playing field.</p>
-              <ObfuscatedEmail className="inline-flex items-center gap-1 text-xs text-on-surface-variant font-bold uppercase tracking-widest hover:text-brand-orange hover:gap-2 transition-all">
+              <Link href="/contact" className="inline-flex items-center gap-1 text-xs text-on-surface-variant font-bold uppercase tracking-widest hover:text-brand-orange hover:gap-2 transition-all">
                 Reach out about Kalamazoo <span className="material-symbols-outlined text-xs">north_east</span>
-              </ObfuscatedEmail>
+              </Link>
             </div>
           </div>
         </div>
