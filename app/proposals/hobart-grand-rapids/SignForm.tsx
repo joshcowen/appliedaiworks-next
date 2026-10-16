@@ -7,9 +7,9 @@ const input =
 const label = "block text-xs font-bold uppercase tracking-wide text-on-surface-variant mb-2";
 
 const tiers = [
-  { key: "foundation", name: "Foundation", price: "$24,500", half: "$12,250" },
-  { key: "complete", name: "Complete", price: "$44,500", half: "$22,250" },
-  { key: "ownership", name: "Complete + Ownership", price: "$89,500", half: "$44,750" },
+  { key: "foundation", name: "Foundation", price: "$24,500", half: "$12,250", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "complete", name: "Complete", price: "$44,500", half: "$22,250", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "ownership", name: "Complete + Ownership", price: "$89,500", half: "$44,750", rights: "Hobart GR owns the code, data, and accounts" },
 ];
 
 export default function SignForm() {
@@ -98,6 +98,10 @@ export default function SignForm() {
         <p>
           <span className="text-on-surface font-medium">Selected option:</span> {selected.name},{" "}
           {selected.price} total ({selected.half} at kickoff, {selected.half} at go-live)
+        </p>
+        <p>
+          <span className="text-on-surface font-medium">Rights:</span> {selected.rights}. Hobart GR
+          always owns its service data.
         </p>
         <p>
           <span className="text-on-surface font-medium">Year 1 maintenance and support:</span>{" "}

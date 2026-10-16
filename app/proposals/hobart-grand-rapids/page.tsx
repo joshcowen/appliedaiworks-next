@@ -100,7 +100,7 @@ const steps = [
   {
     icon: "download",
     title: "Get the data out of Antec",
-    body: "Jimmy and Kevin decide which fields matter and which are junk. We start with a sample of a few hundred records so everyone can see what the data looks like before the full build.",
+    body: "Jimmy decides which fields matter and which are junk. We start with a sample of a few hundred records so everyone can see what the data looks like before the full build.",
   },
   {
     icon: "cleaning_services",
@@ -130,7 +130,7 @@ const steps = [
 ];
 
 const foundationIncludes = [
-  "Discovery sessions with Jimmy and Kevin, including a sample-data review before the full build",
+  "Discovery sessions with Jimmy, including a sample-data review before the full build",
   "Data cleanup and organization across all brands of equipment",
   "Search by equipment, model, serial, symptom, and error code",
   "Answers written by Claude with the service calls cited, so every claim can be checked",
@@ -157,10 +157,19 @@ const ownershipAdds = [
   "Year 2 and later support is still available if you want it, never required",
 ];
 
+const pillLicense =
+  "inline-flex items-center rounded-full border border-outline-variant/30 bg-surface-container-lowest px-3 py-1 text-xs font-medium text-on-surface-variant";
+const pillOwn =
+  "inline-flex items-center rounded-full border border-brand-orange/30 px-3 py-1 text-xs font-bold text-brand-orange";
+
+const licenseRights =
+  "This option is a license. Hobart GR can use the tool for its own business for as long as it likes. Applied AI Works keeps ownership of the code and the platform, and can offer the tool to other shops. Your service data always belongs to Hobart GR.";
+const ownerRights =
+  "Hobart GR owns the code built for it, the cleaned data, and all accounts and keys. Applied AI Works will not offer what was built to other shops.";
+
 const running = [
   { label: "Claude (Anthropic API)", value: "$30 to $90 / mo", note: "at about 1,000 questions a month" },
   { label: "Hosting and database", value: "$50 to $100 / mo", note: "paid directly to the provider" },
-  { label: "One-time data cleanup", value: "$10 to $25", note: "run once on the full history" },
 ];
 
 const nextPhases = [
@@ -179,7 +188,7 @@ const nextPhases = [
 ];
 
 const timeline = [
-  { week: "Weeks 1-2", title: "Discovery", body: "Fields agreed, Antec export in hand, sample data reviewed with Jimmy and Kevin." },
+  { week: "Weeks 1-2", title: "Discovery", body: "Fields agreed, Antec export in hand, sample data reviewed with Jimmy." },
   { week: "Weeks 3-4", title: "Clean + organize", body: "Full history cleaned and normalized across all brands. The searchable index is built." },
   { week: "Weeks 5-6", title: "Search + answers", body: "Search, cited answers, and the phone-friendly app go live for a small group of technicians." },
   { week: "Weeks 7-8", title: "Pilot + launch", body: "Real calls, real feedback, tuning. Team training, then the full shop goes live." },
@@ -402,7 +411,10 @@ export default function HobartGrandRapidsProposal() {
             <div className="bg-surface-container-low border border-outline-variant/20 rounded-3xl p-8">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
                 <div>
-                  <div className="text-xs font-bold text-brand-orange tracking-wide uppercase mb-2">Option 1</div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-xs font-bold text-brand-orange tracking-wide uppercase">Option 1</span>
+                    <span className={pillLicense}>License to use</span>
+                  </div>
                   <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">Foundation</h3>
                   <p className="text-on-surface-variant text-sm leading-relaxed max-w-lg">
                     The working tool: your history cleaned, searchable, and answering questions on
@@ -419,14 +431,20 @@ export default function HobartGrandRapidsProposal() {
                   <Check key={i}>{i}</Check>
                 ))}
               </div>
+              <p className="text-xs text-on-surface-variant leading-relaxed mt-5 pt-4 border-t border-outline-variant/20">
+                <span className="text-on-surface font-medium">Rights:</span> {licenseRights}
+              </p>
             </div>
 
             {/* Complete */}
             <div className="bg-surface-container-low border border-brand-orange/30 rounded-3xl p-8 neural-glow">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
                 <div>
-                  <div className="text-xs font-bold text-brand-orange tracking-wide uppercase mb-2">
-                    Option 2 &middot; Recommended
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-xs font-bold text-brand-orange tracking-wide uppercase">
+                      Option 2 &middot; Recommended
+                    </span>
+                    <span className={pillLicense}>License to use</span>
                   </div>
                   <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">Complete</h3>
                   <p className="text-on-surface-variant text-sm leading-relaxed max-w-lg">
@@ -447,13 +465,19 @@ export default function HobartGrandRapidsProposal() {
                   <Check key={i}>{i}</Check>
                 ))}
               </div>
+              <p className="text-xs text-on-surface-variant leading-relaxed mt-5 pt-4 border-t border-outline-variant/20">
+                <span className="text-on-surface font-medium">Rights:</span> {licenseRights}
+              </p>
             </div>
 
             {/* Ownership */}
             <div className="bg-surface-container-low border border-outline-variant/20 rounded-3xl p-8">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
                 <div>
-                  <div className="text-xs font-bold text-brand-orange tracking-wide uppercase mb-2">Option 3</div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-xs font-bold text-brand-orange tracking-wide uppercase">Option 3</span>
+                    <span className={pillOwn}>You own it</span>
+                  </div>
                   <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">
                     Complete + Ownership
                   </h3>
@@ -476,6 +500,9 @@ export default function HobartGrandRapidsProposal() {
                   <Check key={i}>{i}</Check>
                 ))}
               </div>
+              <p className="text-xs text-on-surface-variant leading-relaxed mt-5 pt-4 border-t border-outline-variant/20">
+                <span className="text-on-surface font-medium">Rights:</span> {ownerRights}
+              </p>
             </div>
           </div>
 
@@ -504,6 +531,11 @@ export default function HobartGrandRapidsProposal() {
                 Hobart GR opens its own Anthropic API account on the company card. A personal Claude
                 chat subscription can&apos;t run a tool like this.
               </p>
+              <p className="text-xs text-on-surface-variant leading-relaxed mt-3">
+                <span className="text-on-surface font-medium">One-time cleanup:</span> reading your
+                full history once at the start uses about $10 to $25 of Claude. That cost is
+                included in the build fee.
+              </p>
             </div>
 
             <div className="bg-surface-container-low border-l-2 border-primary rounded-r-2xl p-7">
@@ -513,7 +545,7 @@ export default function HobartGrandRapidsProposal() {
               <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
                 The first year is included in every option, a $4,800 value. It covers monitoring,
                 moving to newer Claude models when they&apos;re worth it, keeping the Antec sync
-                healthy, and about four hours a month of changes and requests.
+                healthy, and four hours a month of changes and requests.
               </p>
               <div className="flex items-baseline justify-between gap-4 text-sm">
                 <div className="text-on-surface font-medium">Year 2 and later</div>
@@ -631,7 +663,7 @@ export default function HobartGrandRapidsProposal() {
             <h2 className="font-headline text-3xl font-bold text-on-surface mb-5">Ready when you are</h2>
             <p className="text-on-surface-variant leading-relaxed mb-8 max-w-xl mx-auto">
               Pick an option and sign below. I&apos;ll reach out within one business day to start
-              the data conversation with you and Kevin. If a piece of the scope looks wrong, say so
+              the data conversation with you. If a piece of the scope looks wrong, say so
               and I&apos;ll redo the quote before anybody spends a dollar.
             </p>
             <ObfuscatedEmail className="text-brand-orange font-bold text-sm inline-flex items-center gap-2 hover:underline">
