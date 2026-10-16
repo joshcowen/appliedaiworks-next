@@ -81,3 +81,29 @@ input[type="range"]::-moz-range-thumb {
   overflow: hidden;
   flex-shrink: 0;
 }
+
+/* Light theme for client proposal pages. Scoped to .proposal-light so the rest
+ * of the dark site is untouched. The proposal markup keeps using the same
+ * Tailwind color tokens; this block re-points them to a light palette that
+ * stays inside the brand (navy text, orange accent). Add the wrapper class to
+ * a proposal page's root element to opt in. */
+.proposal-light { background-color: #F6F8FC; color: #0B1530; }
+.proposal-light .bg-surface-container-low { background-color: #FFFFFF; box-shadow: 0 1px 2px rgba(11, 21, 48, 0.05); }
+.proposal-light .bg-surface-container-lowest { background-color: #EDF1F8; }
+.proposal-light .text-on-surface { color: #0B1530; }
+.proposal-light .text-on-surface-variant { color: #4B5873; }
+.proposal-light .border-outline-variant\/10,
+.proposal-light .border-outline-variant\/20,
+.proposal-light .border-outline-variant\/30 { border-color: #DCE3EF; }
+.proposal-light .border-primary { border-color: #FF6B00; }
+.proposal-light .border-brand-orange\/30 { border-color: rgba(255, 107, 0, 0.5); }
+.proposal-light .neural-glow { box-shadow: 0 10px 30px rgba(255, 107, 0, 0.14); }
+.proposal-light .text-kinetic {
+  background: linear-gradient(to right, #FF6B00, #E04E00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.proposal-light input::placeholder { color: #8792AB; }
+.proposal-light .text-green-400 { color: #15803D; }
+.proposal-light .text-red-400 { color: #B91C1C; }

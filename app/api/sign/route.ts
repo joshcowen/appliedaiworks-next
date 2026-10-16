@@ -4,12 +4,29 @@ import nodemailer from "nodemailer";
 export const dynamic = "force-dynamic";
 
 // Proposal terms live on the server so a signer can't change what gets reported.
-const PROPOSALS: Record<string, { title: string; company: string; core: string; toolkit: string }> = {
+type Proposal = {
+  title: string;
+  company: string;
+  core?: string;
+  toolkit?: string;
+  tiers?: Record<string, string>;
+};
+
+const PROPOSALS: Record<string, Proposal> = {
   "spartan-outbound-build": {
     title: "Spartan Marketing: Outbound Client Acquisition Build (Phase 1)",
     company: "Spartan Marketing",
     core: "$21,200 core build",
     toolkit: "$7,400 Switching MSPs Toolkit",
+  },
+  "hobart-grand-rapids": {
+    title: "Hobart Sales and Service Grand Rapids: Service Knowledge Search (Phase 1)",
+    company: "Hobart Sales and Service Grand Rapids",
+    tiers: {
+      foundation: "Foundation, $24,500",
+      complete: "Complete, $44,500",
+      ownership: "Complete + Ownership, $89,500",
+    },
   },
 };
 
@@ -34,9 +51,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const investment = toolkit
-      ? `${proposal.core} + ${proposal.toolkit} = $28,600`
-      : `${proposal.core} (Toolkit not included)`;
+    let investment: string;
+    if (proposal.tiers) {
+      const tier = proposal.tiers[String(body.tier)];
+      if (!tier) {
+        return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+      }
+      investment = tier;
+    } else {
+      investment = toolkit
+        ? `${proposal.core} + ${proposal.toolkit} = $28,600`
+        : `${proposal.core} (Toolkit not included)`;
+    }
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
