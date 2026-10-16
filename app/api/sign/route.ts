@@ -64,6 +64,9 @@ export async function POST(req: NextRequest) {
         : `${proposal.core} (Toolkit not included)`;
     }
 
+    // Hobart's page only approves a quote. The services agreement comes later.
+    const approvalOnly = Boolean(proposal.tiers);
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -75,11 +78,11 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: `"Applied AI Works Proposals" <${process.env.GMAIL_USER}>`,
       to: ["josh@appliedaiworks.com", "josh@guidemktg.com"],
-      subject: `Signed: ${proposal.title}`,
+      subject: `${approvalOnly ? "Quote Approved" : "Signed"}: ${proposal.title}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #111; padding: 20px 24px; border-radius: 8px 8px 0 0;">
-            <h2 style="color: #FF6B00; margin: 0; font-size: 18px;">New Agreement Signed</h2>
+            <h2 style="color: #FF6B00; margin: 0; font-size: 18px;">${approvalOnly ? "New Quote Approved" : "New Agreement Signed"}</h2>
             <p style="color: rgba(255,255,255,0.7); margin: 4px 0 0; font-size: 13px;">appliedaiworks.com/proposals</p>
           </div>
           <div style="background: #f9f9f9; padding: 24px; border-radius: 0 0 8px 8px; border: 1px solid #e5e5e5; border-top: none;">
@@ -94,7 +97,7 @@ export async function POST(req: NextRequest) {
               <p style="margin: 4px 0 0; font-size: 14px; color: #555;">${esc(title)}</p>
               <p style="margin: 4px 0 0; font-size: 13px; color: #888;">${esc(date)}</p>
             </div>
-            <p style="margin: 20px 0 0; font-size: 12px; color: #aaa;">The signer confirmed they read and agreed to the scope, deliverables, and payment terms in the proposal.</p>
+            <p style="margin: 20px 0 0; font-size: 12px; color: #aaa;">${approvalOnly ? "The signer approved the quote and selected the option shown. A services agreement is still needed before work begins." : "The signer confirmed they read and agreed to the scope, deliverables, and payment terms in the proposal."}</p>
           </div>
         </div>
       `,

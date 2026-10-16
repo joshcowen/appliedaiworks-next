@@ -31,7 +31,7 @@ export default function SignForm() {
   async function submit() {
     setError("");
     if (!name.trim()) return setError("Please enter your full name.");
-    if (!agreed) return setError("Please check the agreement box to proceed.");
+    if (!agreed) return setError("Please check the approval box to proceed.");
     setSending(true);
     try {
       const res = await fetch("/api/sign", {
@@ -56,11 +56,13 @@ export default function SignForm() {
   return (
     <div className="bg-surface-container-low border border-outline-variant/20 rounded-3xl p-8">
       <div className="text-xs font-bold text-brand-orange tracking-wide uppercase mb-3">
-        Agreement &amp; authorization
+        Approve this quote
       </div>
       <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
-        Choose the option you want, then sign. An invoice for half of the selected fee is issued
-        upon signing and is due at kickoff. The remaining half is due at go-live.
+        Choose the option you want and approve the quote. This is not the contract. A separate
+        services agreement covering licensing, data, and terms follows before any work begins. An
+        invoice for half of the selected fee is issued once that agreement is signed and is due at
+        kickoff. The remaining half is due at go-live.
       </p>
 
       <fieldset className="mb-6">
@@ -101,7 +103,7 @@ export default function SignForm() {
         </p>
         <p>
           <span className="text-on-surface font-medium">Rights:</span> {selected.rights}. Hobart GR
-          always owns its service data.
+          always owns its service data. Full terms are in the services agreement.
         </p>
         <p>
           <span className="text-on-surface font-medium">Year 1 maintenance and support:</span>{" "}
@@ -158,9 +160,9 @@ export default function SignForm() {
           className="mt-1 h-4 w-4 accent-[#FF6B00]"
         />
         <span className="text-sm text-on-surface-variant leading-relaxed">
-          I have read and agree to the scope, deliverables, and payment terms outlined above. I
-          understand that work begins after payment is received. This constitutes a binding agreement
-          between myself and Applied AI Works.
+          I approve this quote and the option I selected above. I understand that a services
+          agreement will follow, and that work begins after it is signed and the kickoff payment is
+          received.
         </span>
       </label>
 
@@ -169,14 +171,14 @@ export default function SignForm() {
         disabled={sending || done}
         className="kinetic-gradient text-white font-bold px-8 py-4 rounded-xl text-sm inline-flex items-center gap-2 hover:scale-[1.01] transition-transform disabled:opacity-50 disabled:hover:scale-100"
       >
-        {sending && !done ? "Sending..." : "Sign & Send Agreement"}
+        {sending && !done ? "Sending..." : "Approve & Send Quote"}
       </button>
 
       {error && <p className="text-sm font-medium text-red-400 mt-4">{error}</p>}
       {done && (
         <div className="mt-6 bg-surface-container-lowest border border-green-500/40 rounded-xl p-5 text-sm text-green-400 font-medium">
-          Your agreement has been received. Josh will be in touch within one business day to confirm
-          and get the project started. Thank you!
+          Your approval has been received. Josh will be in touch within one business day with the
+          services agreement and next steps. Thank you!
         </div>
       )}
     </div>

@@ -154,7 +154,7 @@ const ownershipAdds = [
   "You own what was built: the source code, the cleaned dataset, and all accounts and keys, transferred to you",
   "Full handover: documentation and a working session with whoever you name to run it",
   "Applied AI Works will not resell or reuse what was built specifically for Hobart GR (general-purpose tooling stays with us)",
-  "Year 2 and later support is still available if you want it, never required",
+  "Year 2 and later support is available at $6,600 a year if you want it, and is never required",
 ];
 
 const pillLicense =
@@ -177,7 +177,7 @@ const nextPhases = [
     tag: "Phase 2",
     title: "Native iPhone and Android app",
     range: "$18,000 to $26,000",
-    body: "Camera scan of the equipment nameplate to fill in the model and serial, voice input for gloved hands, and offline access for walk-in coolers and dead zones. Apple's developer fee is $99 a year and Google's is $25 once, both in Hobart GR's name. Private distribution is planned, and store review adds two to three weeks.",
+    body: "Camera scan of the equipment nameplate to fill in the model and serial, voice input for gloved hands, and offline access for walk-in coolers and dead zones. Apple's developer fee is $99 a year and Google's is $25 once, both in Hobart GR's name. Private distribution is planned, and store review adds two to three weeks. Native apps also need yearly maintenance, because iOS and Android both require updates every fall. That cost is quoted with Phase 2.",
   },
   {
     tag: "Phase 3",
@@ -528,8 +528,15 @@ export default function HobartGrandRapidsProposal() {
                 ))}
               </div>
               <p className="text-xs text-on-surface-variant leading-relaxed mt-4">
-                Hobart GR opens its own Anthropic API account on the company card. A personal Claude
-                chat subscription can&apos;t run a tool like this.
+                Hobart GR opens its own Anthropic API account on the company card. No Claude
+                subscription is needed. Anthropic bills API use from prepaid credits, so you pay only
+                for what the tool actually uses.
+              </p>
+              <p className="text-xs text-on-surface-variant leading-relaxed mt-3">
+                <span className="text-on-surface font-medium">No surprise bills:</span> I can set a
+                monthly spending cap on the account. If the cap is ever reached, the tool pauses
+                until the next month or until you raise it, so I&apos;d set it comfortably above the
+                expected cost.
               </p>
               <p className="text-xs text-on-surface-variant leading-relaxed mt-3">
                 <span className="text-on-surface font-medium">One-time cleanup:</span> reading your
@@ -548,13 +555,49 @@ export default function HobartGrandRapidsProposal() {
                 healthy, and four hours a month of changes and requests.
               </p>
               <div className="flex items-baseline justify-between gap-4 text-sm">
-                <div className="text-on-surface font-medium">Year 2 and later</div>
+                <div className="text-on-surface font-medium">Year 2 and later: Foundation</div>
                 <div className="font-headline font-bold text-on-surface">$4,800 / yr</div>
               </div>
               <div className="flex items-baseline justify-between gap-4 text-sm mt-2">
-                <div className="text-on-surface font-medium">With the on-site box (Complete)</div>
-                <div className="font-headline font-bold text-on-surface">$6,600 / yr</div>
+                <div className="text-on-surface font-medium">
+                  Year 2 and later: Complete, and Complete + Ownership
+                  <div className="text-xs text-on-surface-variant font-normal">includes the on-site box</div>
+                </div>
+                <div className="font-headline font-bold text-on-surface shrink-0">$6,600 / yr</div>
               </div>
+            </div>
+
+            <div className="md:col-span-2 bg-surface-container-low border border-outline-variant/20 rounded-2xl p-7">
+              <h3 className="font-headline text-lg font-bold text-on-surface mb-2">
+                If you skip renewal on a license option
+              </h3>
+              <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
+                This applies to Foundation and Complete. The tool does not switch off, and your data
+                stays yours. What stops is everything that keeps it healthy. Here is what can
+                happen.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                <Check>
+                  Monitoring and fixes stop. If hosting or a software update breaks something, it
+                  stays broken until someone repairs it.
+                </Check>
+                <Check>
+                  Claude models get retired on a schedule. When the one your tool uses is retired,
+                  answers stop until it is moved to a newer model.
+                </Check>
+                <Check>
+                  New service calls can stop flowing in if Antec changes how it exports data.
+                </Check>
+                <Check>
+                  The four hours a month of changes and requests end. No new features or tuning.
+                </Check>
+              </div>
+              <p className="text-on-surface-variant text-sm leading-relaxed">
+                You can bring support back whenever you like, and I&apos;ll check the system over
+                first. One-off fixes in between are billed at $300 an hour. Complete + Ownership
+                customers hold the code and can hire anyone to maintain it, so this doesn&apos;t
+                apply to them.
+              </p>
             </div>
           </div>
         </div>
@@ -662,8 +705,9 @@ export default function HobartGrandRapidsProposal() {
           <div className="text-center mb-10">
             <h2 className="font-headline text-3xl font-bold text-on-surface mb-5">Ready when you are</h2>
             <p className="text-on-surface-variant leading-relaxed mb-8 max-w-xl mx-auto">
-              Pick an option and sign below. I&apos;ll reach out within one business day to start
-              the data conversation with you. If a piece of the scope looks wrong, say so
+              Pick an option and approve the quote below. I&apos;ll reach out within one business day
+              with a services agreement that covers licensing, data, and the details, and to start
+              the data conversation. If a piece of the scope looks wrong, say so
               and I&apos;ll redo the quote before anybody spends a dollar.
             </p>
             <ObfuscatedEmail className="text-brand-orange font-bold text-sm inline-flex items-center gap-2 hover:underline">
