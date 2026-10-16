@@ -145,7 +145,7 @@ const foundationIncludes = [
 const completeAdds = [
   "Private on-site data box in the Grandville shop: the master copy of your service history lives in your building (hardware and setup included)",
   "Weekly field-notes workflow: record the service roundtable on Teams, drop in the file, and the useful technical content becomes searchable. Side talk gets filtered out",
-  "Multi-shop ready build: other Hobart dealers can be added later with their own private data. Referral terms for any shop you introduce get put in writing before anyone is approached",
+  "Built for more than one shop: if other Hobart dealers want the same tool, I can add them as separate customers, each with their own private data and their own license. If you introduce one, you receive a referral credit. The terms go in writing before anyone is approached",
   "Dispatch-assist scoping session: how technician skills and van GPS could feed routing, with a written recommendation (planning, not a build)",
   "90-day success review: usage, time saved, what techs ask for that the data can't answer yet",
 ];
@@ -537,11 +537,6 @@ export default function HobartGrandRapidsProposal() {
                 monthly spending cap on the account. If the cap is ever reached, the tool pauses
                 until the next month or until you raise it, so I&apos;d set it comfortably above the
                 expected cost.
-              </p>
-              <p className="text-xs text-on-surface-variant leading-relaxed mt-3">
-                <span className="text-on-surface font-medium">One-time cleanup:</span> reading your
-                full history once at the start uses about $10 to $25 of Claude. That cost is
-                included in the build fee.
               </p>
             </div>
 
