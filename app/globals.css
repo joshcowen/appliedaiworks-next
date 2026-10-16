@@ -107,3 +107,13 @@ input[type="range"]::-moz-range-thumb {
 .proposal-light input::placeholder { color: #8792AB; }
 .proposal-light .text-green-400 { color: #15803D; }
 .proposal-light .text-red-400 { color: #B91C1C; }
+
+/* The site nav is a translucent dark bar that darkens after 40px of scroll.
+ * Over a light proposal page that fade reads as washed out, so on pages that
+ * use .proposal-light the nav is solid dark from the first paint. */
+body:has(.proposal-light) #nav {
+  background-color: #060e20;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(64, 72, 93, 0.4);
+}
