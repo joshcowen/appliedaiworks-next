@@ -156,7 +156,6 @@ const pillLicense =
 const mobileAdds = [
   "Phase 2 included: native iPhone and Android app with nameplate camera scan for model and serial, voice input for gloved hands, and offline access for walk-in coolers and dead zones",
   "Built right after Phase 1 goes live, on the same data and logins, so the techs move straight from the web app to the native app",
-  "Priced below buying Complete and Phase 2 separately ($62,500 to $70,500)",
   "Apple's $99 a year and Google's $25 one-time developer fees are in Hobart GR's name and paid by Hobart GR",
 ];
 
