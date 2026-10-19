@@ -7,9 +7,9 @@ const input =
 const label = "block text-xs font-bold uppercase tracking-wide text-on-surface-variant mb-2";
 
 const tiers = [
-  { key: "foundation", name: "Foundation", price: "$24,500", half: "$12,250", rights: "license to use; Applied AI Works keeps ownership of the code" },
-  { key: "complete", name: "Complete", price: "$44,500", half: "$22,250", rights: "license to use; Applied AI Works keeps ownership of the code" },
-  { key: "ownership", name: "Complete + Ownership", price: "$89,500", half: "$44,750", rights: "Hobart GR owns the code, data, and accounts" },
+  { key: "foundation", name: "Foundation", price: "$24,500", terms: "$12,250 at kickoff, $12,250 at go-live", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "complete", name: "Complete", price: "$44,500", terms: "$22,250 at kickoff, $22,250 at go-live", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "mobile", name: "Complete + Mobile App", price: "$64,500", terms: "$22,250 at kickoff, $22,250 at go-live, $20,000 at app launch", rights: "license to use; Applied AI Works keeps ownership of the code" },
 ];
 
 export default function SignForm() {
@@ -61,8 +61,8 @@ export default function SignForm() {
       <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
         Choose the option you want and approve the quote. This is not the contract. A separate
         services agreement covering licensing, data, and terms follows before any work begins. An
-        invoice for half of the selected fee is issued once that agreement is signed and is due at
-        kickoff. The remaining half is due at go-live.
+        invoice for the kickoff payment of the selected option is issued once that agreement is
+        signed. The remaining payments are due as shown below.
       </p>
 
       <fieldset className="mb-6">
@@ -99,7 +99,7 @@ export default function SignForm() {
         </p>
         <p>
           <span className="text-on-surface font-medium">Selected option:</span> {selected.name},{" "}
-          {selected.price} total ({selected.half} at kickoff, {selected.half} at go-live)
+          {selected.price} total ({selected.terms})
         </p>
         <p>
           <span className="text-on-surface font-medium">Rights:</span> {selected.rights}. Hobart GR

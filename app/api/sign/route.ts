@@ -25,7 +25,7 @@ const PROPOSALS: Record<string, Proposal> = {
     tiers: {
       foundation: "Foundation, $24,500",
       complete: "Complete, $44,500",
-      ownership: "Complete + Ownership, $89,500",
+      mobile: "Complete + Mobile App, $64,500",
     },
   },
 };
