@@ -145,7 +145,7 @@ const foundationIncludes = [
 const completeAdds = [
   "Private on-site data box in the Grandville shop: the master copy of your service history lives in your building (hardware and setup included)",
   "Weekly field-notes workflow: record the service roundtable on Teams, drop in the file, and the useful technical content becomes searchable. Side talk gets filtered out",
-  "Built for more than one shop: if other Hobart dealers want the same tool, I can add them as separate customers, each with their own private data and their own license. If you introduce one who becomes a customer, you receive one year of Complete support free (a $6,600 value), applied to your next renewal once that dealer pays its go-live invoice. The terms go in writing before anyone is approached",
+  "Built for more than one shop: if other Hobart dealers want the same tool, I can add them as separate customers, each with their own private data and their own license.",
   "Dispatch-assist scoping session: how technician skills and van GPS could feed routing, with a written recommendation (planning, not a build)",
   "90-day success review: usage, time saved, what techs ask for that the data can't answer yet",
 ];
@@ -463,6 +463,17 @@ export default function HobartGrandRapidsProposal() {
               <span className="text-on-surface font-medium">Want to own the code outright?</span>{" "}
               Ownership of the source code, cleaned data, and accounts is available on request and
               priced separately.
+            </p>
+          </div>
+
+          <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-7 mt-5">
+            <h3 className="font-headline text-lg font-bold text-on-surface mb-2">Referral credit</h3>
+            <p className="text-on-surface-variant text-sm leading-relaxed">
+              If you introduce another Hobart dealer who becomes a customer, you receive one year of
+              your own maintenance and support free: $6,600 on Complete, $4,800 on Foundation. It is
+              applied to your next renewal once that dealer pays its go-live invoice, and each
+              dealer you introduce earns another year. The terms go in writing before anyone is
+              approached.
             </p>
           </div>
 
