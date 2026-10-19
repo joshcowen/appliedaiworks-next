@@ -153,6 +153,13 @@ const completeAdds = [
 const pillLicense =
   "inline-flex items-center rounded-full border border-outline-variant/30 bg-surface-container-lowest px-3 py-1 text-xs font-medium text-on-surface-variant";
 
+const mobileAdds = [
+  "Phase 2 included: native iPhone and Android app with nameplate camera scan for model and serial, voice input for gloved hands, and offline access for walk-in coolers and dead zones",
+  "Built right after Phase 1 goes live, on the same data and logins, so the techs move straight from the web app to the native app",
+  "Priced below buying Complete and Phase 2 separately ($62,500 to $70,500)",
+  "Apple's $99 a year and Google's $25 one-time developer fees are in Hobart GR's name and paid by Hobart GR",
+];
+
 const licenseRights =
   "This option is a license. Hobart GR can use the tool for its own business for as long as it likes. Applied AI Works keeps ownership of the code and the platform, and can offer the tool to other shops. Your service data always belongs to Hobart GR.";
 
@@ -166,7 +173,7 @@ const nextPhases = [
     tag: "Phase 2",
     title: "Native iPhone and Android app",
     range: "$18,000 to $26,000",
-    body: "Camera scan of the equipment nameplate to fill in the model and serial, voice input for gloved hands, and offline access for walk-in coolers and dead zones. Apple's developer fee is $99 a year and Google's is $25 once, both in Hobart GR's name. Private distribution is planned, and store review adds two to three weeks. Native apps also need yearly maintenance, because iOS and Android both require updates every fall. That cost is quoted with Phase 2.",
+    body: "Camera scan of the equipment nameplate to fill in the model and serial, voice input for gloved hands, and offline access for walk-in coolers and dead zones. Apple's developer fee is $99 a year and Google's is $25 once, both in Hobart GR's name. Private distribution is planned, and store review adds two to three weeks. Native apps also need yearly maintenance, because iOS and Android both require updates every fall. That cost is quoted with Phase 2. Included in Option 3 above.",
   },
   {
     tag: "Phase 3",
@@ -216,7 +223,7 @@ export default function HobartGrandRapidsProposal() {
             <div className="bg-surface-container-low border border-brand-orange/30 rounded-2xl p-6 neural-glow">
               <div className="text-xs text-on-surface-variant mb-2">Phase 1, starting at</div>
               <div className="font-headline text-3xl font-bold text-brand-orange mb-1">$24,500</div>
-              <div className="text-sm text-on-surface-variant">two options, fixed price</div>
+              <div className="text-sm text-on-surface-variant">three options, fixed price</div>
             </div>
             <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-6">
               <div className="text-xs text-on-surface-variant mb-2">Year 1 support</div>
@@ -391,8 +398,8 @@ export default function HobartGrandRapidsProposal() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-4">Investment</h2>
           <p className="text-on-surface-variant leading-relaxed mb-10 max-w-2xl">
-            Two fixed-price options. Half at kickoff, half at go-live. Year 1 maintenance and
-            support is included in both.
+            Three fixed-price options. Foundation and Complete are paid half at kickoff, half at
+            go-live. Year 1 maintenance and support is included in all three.
           </p>
 
           <div className="space-y-5">
@@ -451,6 +458,42 @@ export default function HobartGrandRapidsProposal() {
               </div>
               <div className="grid grid-cols-1 gap-3">
                 {completeAdds.map((i) => (
+                  <Check key={i}>{i}</Check>
+                ))}
+              </div>
+              <p className="text-xs text-on-surface-variant leading-relaxed mt-5 pt-4 border-t border-outline-variant/20">
+                <span className="text-on-surface font-medium">Rights:</span> {licenseRights}
+              </p>
+            </div>
+
+            {/* Complete + Mobile App */}
+            <div className="bg-surface-container-low border border-outline-variant/20 rounded-3xl p-8">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-xs font-bold text-brand-orange tracking-wide uppercase">Option 3</span>
+                    <span className={pillLicense}>License to use</span>
+                  </div>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">
+                    Complete + Mobile App
+                  </h3>
+                  <p className="text-on-surface-variant text-sm leading-relaxed max-w-lg">
+                    Complete, with Phase 2 built in: the native app your techs use in the field,
+                    delivered right after Phase 1 at a bundled price.
+                  </p>
+                </div>
+                <div className="md:text-right shrink-0">
+                  <div className="font-headline text-4xl font-bold text-on-surface">$64,500</div>
+                  <div className="text-sm text-on-surface-variant">
+                    $22,250 at kickoff / $22,250 at go-live / $20,000 at app launch
+                  </div>
+                </div>
+              </div>
+              <div className="text-xs font-bold text-on-surface-variant tracking-wide uppercase mb-3">
+                Everything in Complete, plus
+              </div>
+              <div className="grid grid-cols-1 gap-3">
+                {mobileAdds.map((i) => (
                   <Check key={i}>{i}</Check>
                 ))}
               </div>
@@ -526,8 +569,8 @@ export default function HobartGrandRapidsProposal() {
               </div>
               <div className="flex items-baseline justify-between gap-4 text-sm mt-2">
                 <div className="text-on-surface font-medium">
-                  Year 2 and later: Complete
-                  <div className="text-xs text-on-surface-variant font-normal">includes the on-site box</div>
+                  Year 2 and later: Complete, and Complete + Mobile App
+                  <div className="text-xs text-on-surface-variant font-normal">includes the on-site box; native app upkeep is quoted before the app build</div>
                 </div>
                 <div className="font-headline font-bold text-on-surface shrink-0">$6,600 / yr</div>
               </div>
