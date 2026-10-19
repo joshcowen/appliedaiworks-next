@@ -145,27 +145,16 @@ const foundationIncludes = [
 const completeAdds = [
   "Private on-site data box in the Grandville shop: the master copy of your service history lives in your building (hardware and setup included)",
   "Weekly field-notes workflow: record the service roundtable on Teams, drop in the file, and the useful technical content becomes searchable. Side talk gets filtered out",
-  "Built for more than one shop: if other Hobart dealers want the same tool, I can add them as separate customers, each with their own private data and their own license. If you introduce one, you receive a referral credit. The terms go in writing before anyone is approached",
+  "Built for more than one shop: if other Hobart dealers want the same tool, I can add them as separate customers, each with their own private data and their own license. If you introduce one who becomes a customer, you receive one year of Complete support free (a $6,600 value), applied to your next renewal once that dealer pays its go-live invoice. The terms go in writing before anyone is approached",
   "Dispatch-assist scoping session: how technician skills and van GPS could feed routing, with a written recommendation (planning, not a build)",
   "90-day success review: usage, time saved, what techs ask for that the data can't answer yet",
 ];
 
-const ownershipAdds = [
-  "You own what was built: the source code, the cleaned dataset, and all accounts and keys, transferred to you",
-  "Full handover: documentation and a working session with whoever you name to run it",
-  "Applied AI Works will not resell or reuse what was built specifically for Hobart GR (general-purpose tooling stays with us)",
-  "Year 2 and later support is available at $6,600 a year if you want it, and is never required",
-];
-
 const pillLicense =
   "inline-flex items-center rounded-full border border-outline-variant/30 bg-surface-container-lowest px-3 py-1 text-xs font-medium text-on-surface-variant";
-const pillOwn =
-  "inline-flex items-center rounded-full border border-brand-orange/30 px-3 py-1 text-xs font-bold text-brand-orange";
 
 const licenseRights =
   "This option is a license. Hobart GR can use the tool for its own business for as long as it likes. Applied AI Works keeps ownership of the code and the platform, and can offer the tool to other shops. Your service data always belongs to Hobart GR.";
-const ownerRights =
-  "Hobart GR owns the code built for it, the cleaned data, and all accounts and keys. Applied AI Works will not offer what was built to other shops.";
 
 const running = [
   { label: "Claude (Anthropic API)", value: "$30 to $90 / mo", note: "at about 1,000 questions a month" },
@@ -227,7 +216,7 @@ export default function HobartGrandRapidsProposal() {
             <div className="bg-surface-container-low border border-brand-orange/30 rounded-2xl p-6 neural-glow">
               <div className="text-xs text-on-surface-variant mb-2">Phase 1, starting at</div>
               <div className="font-headline text-3xl font-bold text-brand-orange mb-1">$24,500</div>
-              <div className="text-sm text-on-surface-variant">three options, fixed price</div>
+              <div className="text-sm text-on-surface-variant">two options, fixed price</div>
             </div>
             <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-6">
               <div className="text-xs text-on-surface-variant mb-2">Year 1 support</div>
@@ -402,8 +391,8 @@ export default function HobartGrandRapidsProposal() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-4">Investment</h2>
           <p className="text-on-surface-variant leading-relaxed mb-10 max-w-2xl">
-            Three fixed-price options. Half at kickoff, half at go-live. Year 1 maintenance and
-            support is included in all three.
+            Two fixed-price options. Half at kickoff, half at go-live. Year 1 maintenance and
+            support is included in both.
           </p>
 
           <div className="space-y-5">
@@ -470,40 +459,11 @@ export default function HobartGrandRapidsProposal() {
               </p>
             </div>
 
-            {/* Ownership */}
-            <div className="bg-surface-container-low border border-outline-variant/20 rounded-3xl p-8">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                <div>
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className="text-xs font-bold text-brand-orange tracking-wide uppercase">Option 3</span>
-                    <span className={pillOwn}>You own it</span>
-                  </div>
-                  <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">
-                    Complete + Ownership
-                  </h3>
-                  <p className="text-on-surface-variant text-sm leading-relaxed max-w-lg">
-                    Complete, with the whole system handed to you. The lower options are a license
-                    to use it. This one is yours outright, and it is priced to reflect that I give
-                    up the ability to offer it to other shops.
-                  </p>
-                </div>
-                <div className="md:text-right shrink-0">
-                  <div className="font-headline text-4xl font-bold text-on-surface">$89,500</div>
-                  <div className="text-sm text-on-surface-variant">$44,750 at kickoff / $44,750 at go-live</div>
-                </div>
-              </div>
-              <div className="text-xs font-bold text-on-surface-variant tracking-wide uppercase mb-3">
-                Everything in Complete, plus
-              </div>
-              <div className="grid grid-cols-1 gap-3">
-                {ownershipAdds.map((i) => (
-                  <Check key={i}>{i}</Check>
-                ))}
-              </div>
-              <p className="text-xs text-on-surface-variant leading-relaxed mt-5 pt-4 border-t border-outline-variant/20">
-                <span className="text-on-surface font-medium">Rights:</span> {ownerRights}
-              </p>
-            </div>
+            <p className="text-sm text-on-surface-variant leading-relaxed px-2">
+              <span className="text-on-surface font-medium">Want to own the code outright?</span>{" "}
+              Ownership of the source code, cleaned data, and accounts is available on request and
+              priced separately.
+            </p>
           </div>
 
           {/* Running costs and support */}
@@ -555,7 +515,7 @@ export default function HobartGrandRapidsProposal() {
               </div>
               <div className="flex items-baseline justify-between gap-4 text-sm mt-2">
                 <div className="text-on-surface font-medium">
-                  Year 2 and later: Complete, and Complete + Ownership
+                  Year 2 and later: Complete
                   <div className="text-xs text-on-surface-variant font-normal">includes the on-site box</div>
                 </div>
                 <div className="font-headline font-bold text-on-surface shrink-0">$6,600 / yr</div>
@@ -564,10 +524,10 @@ export default function HobartGrandRapidsProposal() {
 
             <div className="md:col-span-2 bg-surface-container-low border border-outline-variant/20 rounded-2xl p-7">
               <h3 className="font-headline text-lg font-bold text-on-surface mb-2">
-                If you skip renewal on a license option
+                If you skip renewal
               </h3>
               <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
-                This applies to Foundation and Complete. The tool does not switch off, and your data
+                The tool does not switch off, and your data
                 stays yours. What stops is everything that keeps it healthy. Here is what can
                 happen.
               </p>
@@ -589,9 +549,7 @@ export default function HobartGrandRapidsProposal() {
               </div>
               <p className="text-on-surface-variant text-sm leading-relaxed">
                 You can bring support back whenever you like, and I&apos;ll check the system over
-                first. One-off fixes in between are billed at $300 an hour. Complete + Ownership
-                customers hold the code and can hire anyone to maintain it, so this doesn&apos;t
-                apply to them.
+                first. One-off fixes in between are billed at $300 an hour.
               </p>
             </div>
           </div>

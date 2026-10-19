@@ -9,7 +9,6 @@ const label = "block text-xs font-bold uppercase tracking-wide text-on-surface-v
 const tiers = [
   { key: "foundation", name: "Foundation", price: "$24,500", half: "$12,250", rights: "license to use; Applied AI Works keeps ownership of the code" },
   { key: "complete", name: "Complete", price: "$44,500", half: "$22,250", rights: "license to use; Applied AI Works keeps ownership of the code" },
-  { key: "ownership", name: "Complete + Ownership", price: "$89,500", half: "$44,750", rights: "Hobart GR owns the code, data, and accounts" },
 ];
 
 export default function SignForm() {
@@ -67,7 +66,7 @@ export default function SignForm() {
 
       <fieldset className="mb-6">
         <legend className={label}>Option</legend>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {tiers.map((t) => (
             <label
               key={t.key}
