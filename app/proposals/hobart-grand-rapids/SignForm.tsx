@@ -7,9 +7,9 @@ const input =
 const label = "block text-xs font-bold uppercase tracking-wide text-on-surface-variant mb-2";
 
 const tiers = [
-  { key: "foundation", name: "Foundation", price: "$24,500", terms: "$12,250 at kickoff, $12,250 at go-live", rights: "license to use; Applied AI Works keeps ownership of the code" },
-  { key: "complete", name: "Complete", price: "$44,500", terms: "$22,250 at kickoff, $22,250 at go-live", rights: "license to use; Applied AI Works keeps ownership of the code" },
-  { key: "mobile", name: "Complete + Mobile App", price: "$64,500", terms: "$22,250 at kickoff, $22,250 at go-live, $20,000 at app launch", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "foundation", name: "Foundation", scope: "Phase 1", price: "$24,500", terms: "$12,250 at kickoff, $12,250 at go-live", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "complete", name: "Complete", scope: "Phase 1", price: "$44,500", terms: "$22,250 at kickoff, $22,250 at go-live", rights: "license to use; Applied AI Works keeps ownership of the code" },
+  { key: "mobile", name: "Complete + Mobile App", scope: "Phase 1 and Phase 2 (native iPhone and Android app)", price: "$64,500", terms: "$22,250 at kickoff, $22,250 at go-live, $20,000 at app launch", rights: "license to use; Applied AI Works keeps ownership of the code" },
 ];
 
 export default function SignForm() {
@@ -94,8 +94,8 @@ export default function SignForm() {
 
       <div className="bg-surface-container-lowest border-l-2 border-brand-orange rounded-r-xl p-5 mb-6 text-sm text-on-surface-variant leading-relaxed space-y-1">
         <p>
-          <span className="text-on-surface font-medium">Scope:</span> Service Knowledge Search,
-          Phase 1, for Hobart Sales and Service Grand Rapids
+          <span className="text-on-surface font-medium">Scope:</span> Service Knowledge Search,{" "}
+          {selected.scope}, for Hobart Sales and Service Grand Rapids
         </p>
         <p>
           <span className="text-on-surface font-medium">Selected option:</span> {selected.name},{" "}

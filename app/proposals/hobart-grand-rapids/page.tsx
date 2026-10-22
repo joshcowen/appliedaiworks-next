@@ -56,7 +56,7 @@ const openItems = [
     ask: "A sample of 5 to 10 service records, with customer names removed",
     why: "The tool is only as good as the technician notes, so one look at real notes settles the biggest unknown.",
     outcomes: [
-      { when: "Typed sentences with real diagnostic detail", effect: "No change. $24,500 holds." },
+      { when: "Typed sentences with real diagnostic detail", effect: "No change. The quoted price holds." },
       { when: "Short codes and abbreviations, or very different styles across the years", effect: "More cleanup work: +$3,000 to +$8,000." },
       { when: "Many notes nearly empty", effect: "We rescope together before any work begins, because the tool would have less to work with." },
     ],
@@ -232,7 +232,7 @@ export default function HobartGrandRapidsProposal() {
             <div className="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-6">
               <div className="text-xs text-on-surface-variant mb-2">Timeline</div>
               <div className="font-headline text-3xl font-bold text-on-surface mb-1">6 to 8 weeks</div>
-              <div className="text-sm text-on-surface-variant">from the day the data arrives</div>
+              <div className="text-sm text-on-surface-variant">for Phase 1, from the day the data arrives</div>
             </div>
           </div>
         </div>
@@ -386,7 +386,7 @@ export default function HobartGrandRapidsProposal() {
               your records. It keeps stored data in your building. Each answer still sends the
               relevant service notes to Anthropic to be read, so it is not a fully offline system.
               A fully offline version is possible on larger hardware, with noticeably weaker
-              answers, and I would price it separately.
+              answers, for about $10,000 to $20,000 more (see the open items below).
             </p>
           </div>
         </div>
@@ -512,7 +512,8 @@ export default function HobartGrandRapidsProposal() {
             <h3 className="font-headline text-lg font-bold text-on-surface mb-2">Referral credit</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed">
               If you introduce another Hobart dealer who becomes a customer, you receive one year of
-              your own maintenance and support free: $6,600 on Complete, $4,800 on Foundation. It is
+              your own maintenance and support free: $6,600 on Complete or Complete + Mobile App, $4,800
+              on Foundation. It is
               applied to your next renewal once that dealer pays its go-live invoice, and each
               dealer you introduce earns another year. The terms go in writing before anyone is
               approached.
@@ -558,7 +559,8 @@ export default function HobartGrandRapidsProposal() {
                 Maintenance and support
               </h3>
               <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
-                The first year is included in every option, a $4,800 value. It covers monitoring,
+                The first year is included in every option: a $4,800 value on Foundation and $6,600 on
+                Complete and Complete + Mobile App. It covers monitoring,
                 moving to newer Claude models when they&apos;re worth it, keeping the Antec sync
                 healthy, and four hours a month of changes and requests.
               </p>
@@ -614,8 +616,8 @@ export default function HobartGrandRapidsProposal() {
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-4">What comes after Phase 1</h2>
           <p className="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
-            None of this is part of the quote above. It is here so you can plan the budget and see
-            where Phase 1 leads.
+            Phase 2 is included in Option 3. Otherwise, none of this is part of the quote above. It is
+            here so you can plan the budget and see where Phase 1 leads.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {nextPhases.map((p) => (
@@ -691,7 +693,8 @@ export default function HobartGrandRapidsProposal() {
           <h2 className="font-headline text-3xl font-bold text-on-surface mb-4">Timeline</h2>
           <p className="text-on-surface-variant leading-relaxed mb-8 max-w-2xl">
             Six to eight weeks from the day the data export arrives. The calendar depends mostly on
-            how fast the export comes out of Antec.
+            how fast the export comes out of Antec. With Option 3, the native app follows Phase 1 and
+            adds about four to five weeks, including app store review.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {timeline.map((t) => (
