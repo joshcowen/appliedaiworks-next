@@ -29,9 +29,9 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Consulting FAQ for Service Businesses | Applied AI Works",
+  title: "Applied AI Consulting Michigan: Your Questions Answered",
   description:
-    "Get plain answers to common questions about AI consulting for service businesses. Pricing, process, and what to expect. No jargon.",
+    "Plain answers about AI consulting in Michigan for trades and service businesses. Pricing, process, and what to expect from Applied AI Works.",
 };
 
 const gettingStarted: FaqItem[] = [
