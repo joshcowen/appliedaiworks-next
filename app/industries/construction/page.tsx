@@ -6,9 +6,9 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import RelatedPosts from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
-  title: "AI Consulting for Construction Companies — Applied AI Works",
+  title: "Construction AI Consulting That Wins More Bids | Applied AI Works",
   description:
-    "AI consulting for construction companies in West Michigan. Better bids, faster client updates, less documentation overhead. Start with a $1,500 AI Audit.",
+    "Construction AI consulting for contractors in West Michigan. Better bids, faster client updates, less paperwork. Start with a $1,500 AI Audit.",
 };
 
 const faqItems: FaqItem[] = [
