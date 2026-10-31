@@ -6,9 +6,9 @@ import FaqAccordion from "@/components/FaqAccordion";
 import type { FaqItem } from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "AI Consulting West Michigan | Applied AI Works",
+  title: "Applied AI Consulting Michigan | Applied AI Works",
   description:
-    "Applied AI Works helps trades and service businesses in West Michigan save time and cut costs. Start with a $1,500 AI Audit.",
+    "Applied AI Works helps Michigan trades and service businesses save time and cut costs. Book a free discovery call or start with a $1,500 AI Audit.",
 };
 
 const homeFaqs: FaqItem[] = [
