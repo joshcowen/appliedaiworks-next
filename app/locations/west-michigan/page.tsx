@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   // optimizing both pages for the same keyword.
   // Avoid "&" here: it renders as "&amp;" and audit tools count the raw HTML,
   // which silently adds 4 characters and pushes the title back out of range.
-  title: "AI Consulting Across West Michigan for Service Businesses",
+  title: "AI Consulting West Michigan | Trades & Service Businesses",
   description:
-    "Applied AI Works helps West Michigan trades and service businesses save time with practical AI. Serving Holland, Zeeland, and Grand Rapids.",
+    "Applied AI Works helps West Michigan service businesses save time and cut busywork with practical AI. Serving the whole region from Holland.",
 };
 
 const industries = [
