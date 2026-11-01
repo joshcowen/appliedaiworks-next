@@ -4,9 +4,9 @@ import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "5 Automations Every HVAC Company Should Run This Week",
+  title: "5 HVAC Automations That Save Hours This Week",
   description:
-    "Five specific, real automations for HVAC companies. What they are, what tool does it, how long setup takes, and how many hours you get back.",
+    "Real HVAC automation setups with specific tools, honest time estimates, and exactly how many hours you get back. No fluff.",
 };
 
 const articleSchema = {
