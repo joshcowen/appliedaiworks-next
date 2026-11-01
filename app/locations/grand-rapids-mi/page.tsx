@@ -4,9 +4,9 @@ import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "AI Consulting in Grand Rapids, MI — Applied AI Works",
+  title: "AI Consultant Grand Rapids MI | Applied AI Works",
   description:
-    "AI consulting for Grand Rapids service businesses and skilled trades. Not the enterprise firm. The practical AI consultant. $1,500 AI Audit.",
+    "Grand Rapids trades and service businesses hire Applied AI Works for practical AI consulting. No fluff, real results. Start with a $1,500 AI Audit.",
 };
 
 const industries = [
