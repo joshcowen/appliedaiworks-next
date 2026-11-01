@@ -6,9 +6,9 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import RelatedPosts from "@/components/RelatedPosts";
 
 export const metadata: Metadata = {
-  title: "AI Consulting for Cleaning Services — Applied AI Works",
+  title: "Consultant for Cleaning Companies | Applied AI Works",
   description:
-    "AI consulting for cleaning companies in West Michigan. Better onboarding, fewer scheduling headaches, more consistent communication. $1,500 AI Audit.",
+    "Hiring a consultant for cleaning companies? Applied AI Works helps West Michigan cleaners fix scheduling, onboarding, and client communication. $1,500 AI Audit.",
 };
 
 const faqItems: FaqItem[] = [
