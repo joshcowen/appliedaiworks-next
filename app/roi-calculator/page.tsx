@@ -4,9 +4,9 @@ import RoiCalculator from "@/components/RoiCalculator";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "AI ROI Calculator for Service Businesses — Applied AI Works",
+  title: "AI ROI Calculator for Business — Applied AI Works",
   description:
-    "See what AI is worth to your service business. Calculate hours saved per week, annual dollar value, and weeks to ROI on an AI Audit.",
+    "Find out how much AI could save your service business. Enter your hours and wage to see annual savings and weeks to break even.",
 };
 
 export default function RoiCalculatorPage() {
