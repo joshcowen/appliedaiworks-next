@@ -4,9 +4,9 @@ import StatCounter from "@/components/StatCounter";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "AI Consulting for Holland, MI — Service Businesses",
+  title: "Applied AI Consulting Michigan | Holland, MI",
   description:
-    "AI consulting for Holland, MI service businesses and skilled trades. Find where AI saves your operation the most time and money. $1,500 AI Audit.",
+    "Applied AI consulting in Holland, MI for trades and service businesses. Find where AI saves you the most time and money. Start with a $1,500 AI Audit.",
 };
 
 const industries = [
