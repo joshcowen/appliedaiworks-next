@@ -4,9 +4,9 @@ import Link from "next/link";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "How One Business Operator Saved 3,500+ Hours Using AI",
+  title: "Real Results: AI Automation for Small Business Owners",
   description:
-    "The real story of 80+ AI projects and 3,500+ hours of work recovered. What worked, what didn't, and what it means for a service business.",
+    "80+ projects, 3,500+ hours saved. Here's what actually worked when one operator used AI automation to run a leaner small business.",
 };
 
 const articleSchema = {
